@@ -77,9 +77,32 @@
 (use-package avy
   :bind ("C-." ("Jump to char" . avy-goto-char-timer)))
 
+(use-package magit)
+
 (use-package expand-region
     :bind ("C-=" . er/expand-region))
 
+(use-package helm
+  :config
+  (helm-mode 1)
+  (setq
+   helm-split-window-in-side-p t
+   helm-move-to-line-cycle-in-source t
+   helm-ff-search-library-in-sexp t
+   helm-scroll-amount 10
+   helm-ff-file-name-history-use-recentf t
+   helm-echo-input-in-header-line t)
+
+  (global-set-key (kbd "C-c h") 'helm-command-prefix)
+  (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+  (global-unset-key (kbd "C-x c"))
+  (global-set-key (kbd "C-x C-f") 'helm-find-files)
+  (global-set-key (kbd "M-x") 'helm-M-x))
+
+(when (executable-find "curl")
+  (setq helm-google-suggest-use-curl-p t))
 
 ;; init screen
-(recentf-open-files)
+(setq helm-mini-default-sources '(helm-source-recentf
+                                  helm-source-bookmarks))
+(helm-mini)
