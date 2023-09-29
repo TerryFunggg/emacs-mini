@@ -17,7 +17,7 @@
   ;; Restore after startup
 (add-hook 'after-init-hook
             (lambda ()
-              (setq gc-cons-threshold 1000000)
+               (setq gc-cons-threshold 1000000)
               (message "gc-cons-threshold restored to %S"
                        gc-cons-threshold)))
 
@@ -42,6 +42,8 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (show-paren-mode 1)
+(global-display-line-numbers-mode t)
+
 (setq show-paren-style 'parenthesis)
 (setq ring-bell-function 'ignore)
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -72,7 +74,13 @@
     :bind (("C-a" . crux-move-beginning-of-line)))
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-(global-set-key (kbd "<f12>") 'my/emacs-config)
+(use-package god-mode)
+;;(global-set-key (kbd "<escape>") #'god-mode-all)
+;;(global-set-key (kbd "<f12>") 'my/emacs-config)
+
+(use-package ace-window)
+
+(global-set-key (kbd "C-x C-w") #'ace-window)
 
 (use-package avy
   :bind ("C-." ("Jump to char" . avy-goto-char-timer)))
@@ -105,4 +113,4 @@
 ;; init screen
 (setq helm-mini-default-sources '(helm-source-recentf
                                   helm-source-bookmarks))
-(helm-mini)
+;;(god-mode)
