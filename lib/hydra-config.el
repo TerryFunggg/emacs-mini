@@ -25,7 +25,39 @@
 ("q" nil "Cancel" :color blue)
   )
 
-(global-set-key (kbd "C-x b") 'hydra-buffer-menu/body)
+(global-set-key (kbd "C-x C-b") 'hydra-buffer-menu/body)
+
+;; my search
+(defhydra hydra-search-menu (:color red
+                             :hint nil)
+"
+"
+("s" helm-occur "helm-occur")
+("a" helm-ag "helm ag")
+("i" imenu "imenu")
+("r" query-replace "Query Replace")
+("e" query-replace-regexp "Query Expression Replace")
+("e" query-replace-regexp "Query Expression Replace")("q" nil "Cancel" :color blue)
+  )
+
+(global-set-key (kbd "C-c C-s") 'hydra-search-menu/body)
+
+;; my File
+(pretty-hydra-define  hydra-file-menu (:foreign-keys warn :title "File" :quit-key "q")
+  ("Helm"
+   (("f" helm-find-files "Helm Find File")
+    ("a" helm-multi-files "Buffer-Recentf-Directory"))
+   "Recentf"
+   (("r" recentf-open-files "Recentf"))
+   "Projectil"
+   (("p" projectile-find-file "Projectil Find File"))))
+
+
+
+;;("q" nil "Cancel" :color blue)
+
+(global-set-key (kbd "C-c C-f") 'hydra-file-menu/body)
+
 
 
 (provide 'hydra-config)

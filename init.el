@@ -97,7 +97,10 @@
 ;;(global-set-key (kbd "<escape>") #'god-mode-all)
 ;;(global-set-key (kbd "<f12>") 'my/emacs-config)
 
+(use-package posframe)
 (use-package hydra)
+(use-package major-mode-hydra)
+
 
 (use-package ace-window)
 
@@ -126,9 +129,19 @@
 
   (global-set-key (kbd "C-c h") 'helm-command-prefix)
   (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
-  (global-set-key (kbd "C-x C-f") 'helm-find-files)
+  ;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
   (global-set-key (kbd "M-x") 'helm-M-x)
 )
+
+(icomplete-mode 1)
+
+(use-package helm-ag)
+(use-package projectile)
+(use-package company
+  :config
+  (global-company-mode)
+  (setq company-minimum-prefix-length 1
+        company-idle-delay 0.0))
 
 (when (executable-find "curl")
   (setq helm-google-suggest-use-curl-p t))
@@ -136,6 +149,10 @@
 ;;hydra config
 
 (add-to-list 'load-path "~/.emacs.d/lib/")
+(require 'hydra-posframe)
+(setq hydra-posframe-poshandler 'posframe-poshandler-frame-bottom-left-corner)
+(hydra-posframe-mode)
+
 (require 'hydra-config)
 
 ;; init screen
