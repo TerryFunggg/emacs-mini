@@ -1,6 +1,6 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
+;;(package-initialize)
 
 ;; use-package
 (unless (package-installed-p 'use-package)
@@ -20,6 +20,14 @@
                (setq gc-cons-threshold 1000000)
               (message "gc-cons-threshold restored to %S"
                        gc-cons-threshold)))
+
+;; nomo emacs
+(add-to-list 'load-path "~/.emacs.d/nano-theme/")
+(require 'nano)
+
+(setq nano-font-family-monospaced "JetBrains Mono")
+(setq nano-font-size 16)
+(nano-refresh-theme)
 
 ;; System init
 (set-language-environment "utf-8")
@@ -78,9 +86,11 @@
 ;;(global-set-key (kbd "<escape>") #'god-mode-all)
 ;;(global-set-key (kbd "<f12>") 'my/emacs-config)
 
+(use-package hydra)
+
 (use-package ace-window)
 
-(global-set-key (kbd "C-x C-w") #'ace-window)
+;;(global-set-key (kbd "C-x 0") 'ace-window)
 
 (use-package avy
   :bind ("C-." ("Jump to char" . avy-goto-char-timer)))
@@ -88,14 +98,16 @@
 (use-package magit)
 
 (use-package expand-region
-    :bind ("C-=" . er/expand-region))
+  :bind ("C-=" . er/expand-region))
+
+(use-package mini-frame)
 
 (use-package helm
   :config
   (helm-mode 1)
   (setq
    helm-split-window-in-side-p t
-   helm-move-to-line-cycle-in-source t
+   helm-move-to-line-cycle-in-source nil
    helm-ff-search-library-in-sexp t
    helm-scroll-amount 10
    helm-ff-file-name-history-use-recentf t
@@ -105,12 +117,28 @@
   (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
   (global-unset-key (kbd "C-x c"))
   (global-set-key (kbd "C-x C-f") 'helm-find-files)
-  (global-set-key (kbd "M-x") 'helm-M-x))
+  (global-set-key (kbd "M-x") 'helm-M-x)
+)
 
 (when (executable-find "curl")
   (setq helm-google-suggest-use-curl-p t))
 
+;;hydra config
+(defhydra hydra-window-menu (:color red
+                             :hint nil)
+"
+_h_: hsplit    _v_: vsplit    d: delete window    o: delete other window
+"
+("v" split-window-below "vsplit")
+("h" split-window-right "hsplit")
+("d" delete-window "Delete window")
+("o" delete-other-windows "Delte other window")
+("q" nil "Cancel" :color blue)
+  )
+
+(global-set-key (kbd "C-x 0") 'hydra-window-menu/body)
+
 ;; init screen
-(setq helm-mini-default-sources '(helm-source-recentf
-                                  helm-source-bookmarks))
+;;(setq helm-mini-default-sources '(helm-source-recentf
+                                  ;;helm-source-bookmarks))
 ;;(god-mode)
