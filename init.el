@@ -22,12 +22,12 @@
                        gc-cons-threshold)))
 
 ;; nomo emacs
-(add-to-list 'load-path "~/.emacs.d/nano-theme/")
-(require 'nano)
+;;(add-to-list 'load-path "~/.emacs.d/nano-theme/")
+;;(require 'nano)
 
-(setq nano-font-family-monospaced "JetBrains Mono")
-(setq nano-font-size 16)
-(nano-refresh-theme)
+;(setq nano-font-family-monospaced "JetBrains Mono")
+;;(setq nano-font-size 16)
+;;(nano-refresh-theme)
 
 ;; System init
 (set-language-environment "utf-8")
@@ -42,6 +42,8 @@
 
 (require 'recentf)
 (recentf-mode 1)
+(global-set-key (kbd "C-c r") 'recentf-open-files)
+(add-to-list 'recentf-exclude "\\private\\'" "\\opt\\'")
 
 ;; UI
 (column-number-mode 1)
@@ -56,6 +58,9 @@
 (setq ring-bell-function 'ignore)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(set-frame-font "JetBrains Mono 16" nil t)
+
+
 ;; Dired
 (setq dired-dwim-target t)
 (setq dired-recursive-copies 'top)
@@ -69,6 +74,12 @@
 (setq-default tab-width 4)
 
 (setq sentence-end-double-space nil)
+
+;; unset keys
+(global-unset-key (kbd "C-x c"))
+(global-unset-key (kbd "C-x b"))
+(global-unset-key (kbd "C-x b"))
+(global-unset-key (kbd "C-x C-b"));; using hydra buffer
 
 ;; Own
 (defun my/emacs-config ()
@@ -115,7 +126,6 @@
 
   (global-set-key (kbd "C-c h") 'helm-command-prefix)
   (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
-  (global-unset-key (kbd "C-x c"))
   (global-set-key (kbd "C-x C-f") 'helm-find-files)
   (global-set-key (kbd "M-x") 'helm-M-x)
 )
@@ -124,19 +134,9 @@
   (setq helm-google-suggest-use-curl-p t))
 
 ;;hydra config
-(defhydra hydra-window-menu (:color red
-                             :hint nil)
-"
-_h_: hsplit    _v_: vsplit    d: delete window    o: delete other window
-"
-("v" split-window-below "vsplit")
-("h" split-window-right "hsplit")
-("d" delete-window "Delete window")
-("o" delete-other-windows "Delte other window")
-("q" nil "Cancel" :color blue)
-  )
 
-(global-set-key (kbd "C-x 0") 'hydra-window-menu/body)
+(add-to-list 'load-path "~/.emacs.d/lib/")
+(require 'hydra-config)
 
 ;; init screen
 ;;(setq helm-mini-default-sources '(helm-source-recentf
