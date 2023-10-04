@@ -84,16 +84,6 @@
 (global-unset-key (kbd "C-x b"))
 (global-unset-key (kbd "C-x C-b"));; using hydra buffer
 
-;; Own
-(defun my/emacs-config ()
-    "Edit my emacs config"
-    (interactive)
-    (find-file "~/.emacs.d/init.el"))
-
-(defun my/hydra-config ()
-    "Edit my hydra config"
-    (interactive)
-    (find-file "~/.emacs.d/lib/hydra-config.el"))
 
 
 ;; Packages
@@ -115,7 +105,8 @@
 ;;(global-set-key (kbd "C-x 0") 'ace-window)
 
 (use-package avy
-  :bind ("C-." ("Jump to char" . avy-goto-char-timer)))
+  ;; :bind ("C-." ("Jump to char" . avy-goto-char-timer))
+)
 
 (use-package magit)
 
@@ -162,6 +153,18 @@
 (hydra-posframe-mode)
 
 (require 'hydra-config)
+
+;; Own
+(defun my/emacs-config ()
+    "Edit my emacs config"
+    (interactive)
+    (find-file "~/.emacs.d/init.el"))
+
+(defun my/hydra-config ()
+    "Edit my hydra config"
+    (interactive)
+    (find-file "~/.emacs.d/lib/hydra-config.el"))
+
 
 ;; init screen
 ;;(setq helm-mini-default-sources '(helm-source-recentf

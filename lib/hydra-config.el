@@ -1,8 +1,4 @@
 ;; my ace window
-(defun ide-window-mode ()
-  ""
-  (interactive)
-  (en)
 (pretty-hydra-define  hydra-window-menu (:foreign-keys warn :title "Window" :quit-key "q")
   (
    "Adjust"
@@ -24,7 +20,7 @@
 ))
 
 (global-set-key (kbd "C-x 0") 'hydra-window-menu/body)
-(add-to-list 'load-path "~/.emacs.d/lib/")
+;;(add-to-list 'load-path "~/.emacs.d/lib/")
 
 ;; my buffer
 (defhydra hydra-buffer-menu (:color red
@@ -41,17 +37,18 @@
 (global-set-key (kbd "C-x C-b") 'hydra-buffer-menu/body)
 
 ;; my search
-(defhydra hydra-search-menu (:color red
-                             :hint nil)
-"
-"
-("s" helm-occur "helm-occur")
-("a" helm-ag "helm ag")
-("i" imenu "imenu")
-("r" query-replace "Query Replace")
-("e" query-replace-regexp "Query Expression Replace")
-("e" query-replace-regexp "Query Expression Replace")("q" nil "Cancel" :color blue)
-  )
+(pretty-hydra-define  hydra-search-menu (:foreign-keys warn :title "Search" :quit-key "q")
+  (
+   "Query"
+   (("q" query-replace "Query Replace")
+    ("e" query-replace-regexp "Query Expression Replace"))
+   "Text Search"
+   (
+    ("s" helm-occur "Current File")
+    ("a" helm-ag "Current Directory"))
+   "Function"
+   (("i" imenu "imenu"))
+))
 
 (global-set-key (kbd "C-c C-s") 'hydra-search-menu/body)
 
