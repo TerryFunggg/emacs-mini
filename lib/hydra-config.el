@@ -1,14 +1,27 @@
 ;; my ace window
-(defhydra hydra-window-menu (:color red
-                             :hint nil)
-""
-("a" ace-window "ace-window")
-("v" split-window-below "vsplit")
-("h" split-window-right "hsplit")
-("d" delete-window "Delete window")
-("o" delete-other-windows "Delte other window")
-("q" nil "Cancel" :color blue)
-  )
+(defun ide-window-mode ()
+  ""
+  (interactive)
+  (en)
+(pretty-hydra-define  hydra-window-menu (:foreign-keys warn :title "Window" :quit-key "q")
+  (
+   "Adjust"
+   (
+    ("<up>" enlarge-window "Up")
+    ("<down>" shrink-window "Down")
+    ("<left>" shrink-window-horizontally "Left")
+    ("<right>" enlarge-window-horizontally "Right")
+    ("=" balance-windows "Balance")
+    )
+   "Split"
+   (("v" split-window-below "vsplit")
+    ("h" split-window-right "hsplit"))
+   "Delete"
+   (("d" delete-window "Delete window")
+    ("o" delete-other-windows "Delte other window"))
+   "Switch Window"
+   (("a" ace-window "ace-window"))
+))
 
 (global-set-key (kbd "C-x 0") 'hydra-window-menu/body)
 (add-to-list 'load-path "~/.emacs.d/lib/")

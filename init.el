@@ -67,6 +67,9 @@
 (setq dired-recursive-deletes 'top)
 (require 'dired-x)
 
+;; Tramp mode
+(setq tramp-default-method "ssh")
+
 ;; TAB config
 (electric-indent-mode 0)
 (set-default 'tab-always-indent 'complete)
@@ -86,6 +89,11 @@
     "Edit my emacs config"
     (interactive)
     (find-file "~/.emacs.d/init.el"))
+
+(defun my/hydra-config ()
+    "Edit my hydra config"
+    (interactive)
+    (find-file "~/.emacs.d/lib/hydra-config.el"))
 
 
 ;; Packages
