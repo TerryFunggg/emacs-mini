@@ -1,6 +1,6 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-;;(package-initialize)
+(package-initialize)
 
 ;; use-package
 (unless (package-installed-p 'use-package)
@@ -20,14 +20,6 @@
                (setq gc-cons-threshold 1000000)
               (message "gc-cons-threshold restored to %S"
                        gc-cons-threshold)))
-
-;; nomo emacs
-;;(add-to-list 'load-path "~/.emacs.d/nano-theme/")
-;;(require 'nano)
-
-;(setq nano-font-family-monospaced "JetBrains Mono")
-;;(setq nano-font-size 16)
-;;(nano-refresh-theme)
 
 ;; System init
 (set-language-environment "utf-8")
@@ -78,11 +70,6 @@
 
 (setq sentence-end-double-space nil)
 
-;; unset keys
-;;(global-unset-key (kbd "C-x c"))
-;;(global-unset-key (kbd "C-x b"))
-;;(global-unset-key (kbd "C-x C-b"));; using hydra buffer
-
 ;; Own
 (defun my/emacs-config ()
     "Edit my emacs config"
@@ -94,16 +81,6 @@
     :bind (("C-a" . crux-move-beginning-of-line)))
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-;;(use-package god-mode)
-;;(global-set-key (kbd "<escape>") #'god-mode-all)
-;;(global-set-key (kbd "<f12>") 'my/emacs-config)
-
-;;(use-package posframe)
-;;(use-package hydra)
-;;(use-package pretty-hydra)
-;;(use-package major-mode-hydra)
-
-
 (use-package ace-window)
 (global-set-key (kbd "C-x 0") 'ace-window)
 
@@ -114,25 +91,6 @@
 
 (use-package expand-region
   :bind ("C-=" . er/expand-region))
-
-;;(use-package mini-frame)
-
-(use-package helm
-  :config
-;;  (helm-mode 1)
-  (setq
-   helm-split-window-in-side-p t
-   helm-move-to-line-cycle-in-source nil
-   helm-ff-search-library-in-sexp t
-   helm-scroll-amount 10
-   helm-ff-file-name-history-use-recentf t
-   helm-echo-input-in-header-line t)
-
-  ;;(global-set-key (kbd "C-c h") 'helm-command-prefix)
-  ;;(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
-  ;;(global-set-key (kbd "C-x C-f") 'helm-find-files)
-  ;;(global-set-key (kbd "M-x") 'helm-M-x)
-)
 
 (use-package fzf
   :config
@@ -157,8 +115,8 @@
 
 (icomplete-mode 1)
 
-(use-package helm-ag)
 (use-package projectile)
+
 (use-package company
   :config
   (global-company-mode)
@@ -168,24 +126,6 @@
 (when (executable-find "curl")
   (setq helm-google-suggest-use-curl-p t))
 
-;;hydra config
 
-;;(add-to-list 'load-path "~/.emacs.d/lib/")
-;;(require 'hydra-posframe)
-;;(setq hydra-posframe-poshandler 'posframe-poshandler-frame-bottom-left-corner)
-;;(hydra-posframe-mode)
-;;(require 'hydra-config)
-
-;;(god-mode)
-
-;; evil-mode
-;; alias
-;; or others
 (add-to-list 'load-path "~/.emacs.d/lib/")
 (require 'my-alias)
-;;(require 'my-evil)
-
-;; lang
-;;(add-to-list 'load-path "~/.emacs.d/lang/")
-
-;;(evil-mode 1)
