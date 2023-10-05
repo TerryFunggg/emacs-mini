@@ -1,13 +1,13 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
+
 
 ;; use-package
 (unless (package-installed-p 'use-package)
     (package-refresh-contents)
     (package-install 'use-package)
     (eval-when-compile (require 'use-package)))
-
+;;(package-initialize)
 
 (setq use-package-always-ensure t)
 
@@ -64,6 +64,7 @@
 
 ;; TAB config
 (electric-indent-mode 0)
+
 (set-default 'tab-always-indent 'complete)
 (setq-default indent-tabs-mode)
 (setq-default tab-width 4)
@@ -105,13 +106,27 @@
         fzf/position-bottom t
         fzf/window-height 15)
 )
-(global-set-key (kbd "C-c C-f") 'fzf-find-file)
-(global-set-key (kbd "C-c C-r") 'fzf-recentf)
-(global-set-key (kbd "C-c C-p") 'fzf-projectile)
-(global-set-key (kbd "C-c C-g") 'fzf-git-files)
+(global-set-key (kbd "C-c f") 'fzf-find-file)
+(global-set-key (kbd "C-c r") 'fzf-recentf)
+(global-set-key (kbd "C-c p") 'fzf-projectile)
+(global-set-key (kbd "C-c g") 'fzf-git-files)
 (global-set-key (kbd "C-x b") 'fzf-switch-buffer)
 
-(use-package ag)
+;;(use-package ag)
+
+(use-package rg)
+;;(require 'rg-isearch)
+;;(define-key isearch-mode-map "\M-sr" 'rg-isearch-menu)
+(global-set-key (kbd "C-c C-s") 'rg)
+
+(use-package ivy)
+(use-package counsel)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+;;(global-set-key (kbd "C-c C-s") 'counsel-rg)
+(ivy-mode)
 
 (icomplete-mode 1)
 
