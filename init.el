@@ -33,7 +33,7 @@
 (set-language-environment "utf-8")
 (set-default-coding-systems 'utf-8-unix)
 (setq inhibit-startup-screen t)
-(setq make-backup-files -1)
+(setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq create-lockfiles nil)
 (global-auto-revert-mode 1)
@@ -58,7 +58,7 @@
 (setq ring-bell-function 'ignore)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-(set-frame-font "JetBrains Mono 16" nil t)
+(set-frame-font "JetBrains Mono 12" nil t)
 
 
 ;; Dired
@@ -79,45 +79,47 @@
 (setq sentence-end-double-space nil)
 
 ;; unset keys
-(global-unset-key (kbd "C-x c"))
-(global-unset-key (kbd "C-x b"))
-(global-unset-key (kbd "C-x b"))
-(global-unset-key (kbd "C-x C-b"));; using hydra buffer
+;;(global-unset-key (kbd "C-x c"))
+;;(global-unset-key (kbd "C-x b"))
+;;(global-unset-key (kbd "C-x C-b"));; using hydra buffer
 
-
+;; Own
+(defun my/emacs-config ()
+    "Edit my emacs config"
+    (interactive)
+    (find-file "~/.emacs.d/init.el"))
 
 ;; Packages
 (use-package crux
     :bind (("C-a" . crux-move-beginning-of-line)))
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-(use-package god-mode)
+;;(use-package god-mode)
 ;;(global-set-key (kbd "<escape>") #'god-mode-all)
 ;;(global-set-key (kbd "<f12>") 'my/emacs-config)
 
-(use-package posframe)
-(use-package hydra)
-(use-package major-mode-hydra)
+;;(use-package posframe)
+;;(use-package hydra)
+;;(use-package pretty-hydra)
+;;(use-package major-mode-hydra)
 
 
 (use-package ace-window)
+(global-set-key (kbd "C-x 0") 'ace-window)
 
-;;(global-set-key (kbd "C-x 0") 'ace-window)
-
-(use-package avy
-  ;; :bind ("C-." ("Jump to char" . avy-goto-char-timer))
-)
+(use-package avy)
+(global-set-key (kbd "C-c .") 'avy-goto-char-timer)
 
 (use-package magit)
 
 (use-package expand-region
   :bind ("C-=" . er/expand-region))
 
-(use-package mini-frame)
+;;(use-package mini-frame)
 
 (use-package helm
   :config
-  (helm-mode 1)
+;;  (helm-mode 1)
   (setq
    helm-split-window-in-side-p t
    helm-move-to-line-cycle-in-source nil
@@ -126,11 +128,32 @@
    helm-ff-file-name-history-use-recentf t
    helm-echo-input-in-header-line t)
 
-  (global-set-key (kbd "C-c h") 'helm-command-prefix)
-  (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
-  ;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
-  (global-set-key (kbd "M-x") 'helm-M-x)
+  ;;(global-set-key (kbd "C-c h") 'helm-command-prefix)
+  ;;(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+  ;;(global-set-key (kbd "C-x C-f") 'helm-find-files)
+  ;;(global-set-key (kbd "M-x") 'helm-M-x)
 )
+
+(use-package fzf
+  :config
+  (setq fzf/args "-x --color bw --print-query --margin=1,0 --no-hscroll"
+        fzf/executable "fzf"
+        fzf/git-grep-args "-i --line-number %s"
+        ;; command used for `fzf-grep-*` functions
+        ;; example usage for ripgrep:
+        ;; fzf/grep-command "rg --no-heading -nH"
+        fzf/grep-command "grep -nrH"
+        ;; If nil, the fzf buffer will appear at the top of the window
+        fzf/position-bottom t
+        fzf/window-height 15)
+)
+(global-set-key (kbd "C-c C-f") 'fzf-find-file)
+(global-set-key (kbd "C-c C-r") 'fzf-recentf)
+(global-set-key (kbd "C-c C-p") 'fzf-projectile)
+(global-set-key (kbd "C-c C-g") 'fzf-git-files)
+(global-set-key (kbd "C-x b") 'fzf-switch-buffer)
+
+(use-package ag)
 
 (icomplete-mode 1)
 
@@ -147,26 +170,22 @@
 
 ;;hydra config
 
-(add-to-list 'load-path "~/.emacs.d/lib/")
-(require 'hydra-posframe)
-(setq hydra-posframe-poshandler 'posframe-poshandler-frame-bottom-left-corner)
-(hydra-posframe-mode)
+;;(add-to-list 'load-path "~/.emacs.d/lib/")
+;;(require 'hydra-posframe)
+;;(setq hydra-posframe-poshandler 'posframe-poshandler-frame-bottom-left-corner)
+;;(hydra-posframe-mode)
+;;(require 'hydra-config)
 
-(require 'hydra-config)
-
-;; Own
-(defun my/emacs-config ()
-    "Edit my emacs config"
-    (interactive)
-    (find-file "~/.emacs.d/init.el"))
-
-(defun my/hydra-config ()
-    "Edit my hydra config"
-    (interactive)
-    (find-file "~/.emacs.d/lib/hydra-config.el"))
-
-
-;; init screen
-;;(setq helm-mini-default-sources '(helm-source-recentf
-                                  ;;helm-source-bookmarks))
 ;;(god-mode)
+
+;; evil-mode
+;; alias
+;; or others
+(add-to-list 'load-path "~/.emacs.d/lib/")
+(require 'my-alias)
+;;(require 'my-evil)
+
+;; lang
+;;(add-to-list 'load-path "~/.emacs.d/lang/")
+
+;;(evil-mode 1)
