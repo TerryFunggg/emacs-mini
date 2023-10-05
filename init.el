@@ -29,6 +29,8 @@
 (setq auto-save-default nil)
 (setq create-lockfiles nil)
 (global-auto-revert-mode 1)
+(setq global-auto-revert-non-file-buffers t) ;; auto refresh buffer
+(setq auto-revert-verbose nil)
 (setq custom-file (make-temp-file "custom"))
 
 
@@ -57,7 +59,9 @@
 (setq dired-dwim-target t)
 (setq dired-recursive-copies 'top)
 (setq dired-recursive-deletes 'top)
+
 (require 'dired-x)
+(define-key dired-mode-map (kbd "-") #'dired-up-directory)
 
 ;; Tramp mode
 (setq tramp-default-method "ssh")
