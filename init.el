@@ -142,6 +142,10 @@
   (setq company-minimum-prefix-length 1
         company-idle-delay 0.0))
 
+;; theme
+(use-package dracula-theme)
+(load-theme 'dracula t)
+
 (when (executable-find "curl")
   (setq helm-google-suggest-use-curl-p t))
 
