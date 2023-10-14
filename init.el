@@ -140,6 +140,6 @@
   (setq helm-google-suggest-use-curl-p t))
 
 
-(add-to-list 'load-path "~/.emacs.d/lib/")
+(add-to-list 'load-path "~/.emacs.d/modules/")
 (require 'my-alias)
 (require 'my-keymaps)
