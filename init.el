@@ -36,7 +36,6 @@
 
 (require 'recentf)
 (recentf-mode 1)
-(global-set-key (kbd "C-c r") 'recentf-open-files)
 (add-to-list 'recentf-exclude "\\private\\'" "\\opt\\'")
 
 ;; UI
@@ -52,7 +51,7 @@
 (setq ring-bell-function 'ignore)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-(set-frame-font "JetBrains Mono 12" nil t)
+;;(set-frame-font "JetBrains Mono 12" nil t)
 
 
 ;; Dired
@@ -87,10 +86,8 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (use-package ace-window)
-(global-set-key (kbd "C-x 0") 'ace-window)
 
 (use-package avy)
-(global-set-key (kbd "C-c .") 'avy-goto-char-timer)
 
 (use-package magit)
 
@@ -110,26 +107,19 @@
         fzf/position-bottom t
         fzf/window-height 15)
 )
-(global-set-key (kbd "C-c f") 'fzf-find-file)
-(global-set-key (kbd "C-c r") 'fzf-recentf)
-(global-set-key (kbd "C-c p") 'fzf-projectile)
-(global-set-key (kbd "C-c g") 'fzf-git-files)
-(global-set-key (kbd "C-x b") 'fzf-switch-buffer)
 
 ;;(use-package ag)
 
 (use-package rg)
 ;;(require 'rg-isearch)
 ;;(define-key isearch-mode-map "\M-sr" 'rg-isearch-menu)
-(global-set-key (kbd "C-c C-s") 'rg)
+
 
 (use-package ivy)
 (use-package counsel)
 (setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)
-(global-set-key (kbd "M-x") 'counsel-M-x)
-(global-set-key (kbd "C-x C-f") 'counsel-find-file)
-;;(global-set-key (kbd "C-c C-s") 'counsel-rg)
+
 (ivy-mode)
 
 (icomplete-mode 1)
@@ -152,3 +142,4 @@
 
 (add-to-list 'load-path "~/.emacs.d/lib/")
 (require 'my-alias)
+(require 'my-keymaps)
