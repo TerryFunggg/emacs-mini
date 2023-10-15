@@ -80,66 +80,26 @@
     (interactive)
     (find-file "~/.emacs.d/init.el"))
 
-;; Packages
-(use-package crux
-    :bind (("C-a" . crux-move-beginning-of-line)))
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-
-(use-package ace-window)
-
-(use-package avy)
-
-(use-package magit)
-
-(use-package expand-region
-  :bind ("C-=" . er/expand-region))
-
-(use-package fzf
-  :config
-  (setq fzf/args "-x --color bw --print-query --margin=1,0 --no-hscroll"
-        fzf/executable "fzf"
-        fzf/git-grep-args "-i --line-number %s"
-        ;; command used for `fzf-grep-*` functions
-        ;; example usage for ripgrep:
-        ;; fzf/grep-command "rg --no-heading -nH"
-        fzf/grep-command "grep -nrH"
-        ;; If nil, the fzf buffer will appear at the top of the window
-        fzf/position-bottom t
-        fzf/window-height 15)
-)
-
-;;(use-package ag)
-
-(use-package rg)
-;;(require 'rg-isearch)
-;;(define-key isearch-mode-map "\M-sr" 'rg-isearch-menu)
-
-
-(use-package ivy)
-(use-package counsel)
-(setq ivy-use-virtual-buffers t)
-(setq enable-recursive-minibuffers t)
-
-(ivy-mode)
-
-(icomplete-mode 1)
-
-(use-package projectile)
-
-(use-package company
-  :config
-  (global-company-mode)
-  (setq company-minimum-prefix-length 1
-        company-idle-delay 0.0))
+(defun my/modules-config ()
+    "Edit my emacs config"
+    (interactive)
+    (find-file "~/.emacs.d/modules/"))
 
 ;; theme
 (use-package dracula-theme)
 (load-theme 'dracula t)
 
-(when (executable-find "curl")
-  (setq helm-google-suggest-use-curl-p t))
-
 
 (add-to-list 'load-path "~/.emacs.d/modules/")
 (require 'my-alias)
-(require 'my-keymaps)
+(require 'my-better-edit)
+(require 'my-ivy)
+(require 'my-window)
+(require 'my-company)
+(require 'my-fzf)
+(require 'my-rg)
+(require 'my-projectile)
+(require 'my-magit)
+;;(require 'my-evil)
+(require 'my-meow)
+;;(require 'my-keymaps)
