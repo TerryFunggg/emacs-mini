@@ -7,7 +7,7 @@
     (package-refresh-contents)
     (package-install 'use-package)
     (eval-when-compile (require 'use-package)))
-;;(package-initialize)
+(package-initialize)
 
 (setq use-package-always-ensure t)
 
@@ -100,6 +100,10 @@
 (require 'my-rg)
 (require 'my-projectile)
 (require 'my-magit)
+(require 'my-docker)
+(require 'my-web-mode)
+(add-to-list 'load-path "~/.emacs.d/meow/")
+(require 'meow)
 ;;(require 'my-evil)
 (require 'my-meow)
 ;;(require 'my-keymaps)

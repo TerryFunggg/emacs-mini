@@ -1,4 +1,3 @@
-(use-package meow)
 
 ;; QWERTYf
 (defun meow-setup ()
@@ -87,9 +86,17 @@
    '("'" . repeat)
    '("<escape>" . ignore)))
 
-(setq meow-expand-hint-remove-delay 5.0)
+;;(use-bpackage meow)
+(global-set-key (kbd "C-c b p") 'previous-buffer)
+(global-set-key (kbd "C-c b n") 'next-buffer)
+(global-set-key (kbd "C-c b k") 'kill-buffer)
+(global-set-key (kbd "C-c b b") 'counsel-ibuffer)
+(global-set-key (kbd "C-c w s") 'split-window-below)
+(global-set-key (kbd "C-c w v") 'split-window-horizontally)
+(global-set-key (kbd "C-c w d") 'delete-window)
+(global-set-key (kbd "C-c w D") 'delete-other-windows)
 
 (meow-setup)
-(meow-global-modpe 1)
-
+(setq meow-expand-hint-remove-delay 5.0)
+(meow-global-mode 1)
 (provide 'my-meow)

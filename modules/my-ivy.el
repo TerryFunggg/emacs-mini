@@ -11,7 +11,7 @@
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 ;;(global-set-key (kbd "M-y") 'counsel-yank-pop)
 ;;(global-set-key (kbd "M-f") 'counsel-fzf)
-(global-set-key (kbd "C-x b") 'counsel-switch-buffer)
+(global-set-key (kbd "C-c b b") 'counsel-switch-buffer)
 ;;(global-set-key (kbd "M-m") 'counsel-bookmark)
 
 (provide 'my-ivy)
