@@ -1,5 +1,10 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives
+                     '("melpa-stable" . "http://stable.melpa.org/packages/"))
+(add-to-list 'package-archives
+                     '("melpa" . "http://melpa.org/packages/"))
+
 
 
 ;; use-package
@@ -11,6 +16,10 @@
 
 (setq use-package-always-ensure t)
 
+(use-package exec-path-from-shell)
+
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
 
 ;; GC
 (setq gc-cons-threshold 10000000)
@@ -62,6 +71,13 @@
 (require 'dired-x)
 (define-key dired-mode-map (kbd "-") #'dired-up-directory)
 
+;; ido mode
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(setq ido-use-filename-at-point 'guess)
+(setq ido-create-new-buffer 'always)
+(ido-mode 1)
+
 ;; Tramp mode
 (setq tramp-default-method "ssh")
 
@@ -87,14 +103,15 @@
 
 ;; theme
 (use-package dracula-theme)
-(load-theme 'dracula t)
+(use-package leuven-theme)
+(load-theme 'leuven t)
 
 
 (add-to-list 'load-path "~/.emacs.d/modules/")
 (require 'my-alias)
 (require 'my-better-edit)
-(require 'my-ivy)
-(require 'my-window)
+;;(require 'my-ivy)
+;;(require 'my-window)
 (require 'my-company)
 (require 'my-fzf)
 (require 'my-rg)
@@ -102,8 +119,7 @@
 (require 'my-magit)
 (require 'my-docker)
 (require 'my-web-mode)
-(add-to-list 'load-path "~/.emacs.d/meow/")
-(require 'meow)
-;;(require 'my-evil)
-(require 'my-meow)
+(require 'my-citre)
+;;(requiret 'my-evil)
+;;(require 'my-meow)
 ;;(require 'my-keymaps)
