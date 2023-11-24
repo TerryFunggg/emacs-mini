@@ -31,6 +31,7 @@
                        gc-cons-threshold)))
 
 ;; System init
+(set-face-attribute 'default nil :height 140)
 (set-language-environment "utf-8")
 (set-default-coding-systems 'utf-8-unix)
 (setq inhibit-startup-screen t)
@@ -58,7 +59,7 @@
 
 (setq show-paren-style 'parenthesis)
 (setq ring-bell-function 'ignore)
-(defalias 'yes-or-no-p 'y-or-n-p)
+;;(defalias 'yes-or-no-p 'y-or-n-p)
 
 ;;(set-frame-font "JetBrains Mono 12" nil t)
 
@@ -118,8 +119,8 @@
 (require 'my-projectile)
 (require 'my-magit)
 (require 'my-docker)
-(require 'my-web-mode)
 (require 'my-citre)
+(require 'my-langs)
 ;;(requiret 'my-evil)
 ;;(require 'my-meow)
 ;;(require 'my-keymaps)
