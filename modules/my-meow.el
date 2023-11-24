@@ -1,3 +1,4 @@
+(use-package meow)
 
 ;; QWERTYf
 (defun meow-setup ()
