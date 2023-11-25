@@ -1,3 +1,13 @@
+(use-package magit)
+
+(use-package docker
+  :ensure t
+  :bind ("C-c d" . docker)
+)
+
+(use-package projectile)
+(global-set-key (kbd "C-c p f") 'projectile-find-file)
+
 (use-package fzf
   :config
   (setq fzf/args "-x --color bw --print-query --margin=1,0 --no-hscroll"
@@ -13,10 +23,10 @@
 )
 
 (global-set-key (kbd "C-c f") 'fzf-find-file)
-;;(global-set-key (kbd "C-c r") 'fzf-recentf)
-;;(global-set-key (kbd "C-c p") 'fzf-projectile)
-;;(global-set-key (kbd "C-c g") 'fzf-git-files)
-;;(global-set-key (kbd "C-x b") 'fzf-switch-buffer)
+
+(use-package wgrep)
+(use-package rg)
+(global-set-key (kbd "C-c s s") 'rg)
 
 
-(provide 'my-fzf)
+(provide 'my-utils)
