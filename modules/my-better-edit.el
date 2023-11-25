@@ -13,4 +13,7 @@
 
 (icomplete-mode 1)
 
+
+(global-set-key (kbd "C-c b") 'bookmark-bmenu-list)
+
 (provide 'my-better-edit)

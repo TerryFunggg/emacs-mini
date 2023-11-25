@@ -1,4 +1,24 @@
 (use-package web-mode)
+
+(use-package css-mode
+  :ensure t
+  :mode "\\.css\\'"
+  :config
+  (add-hook 'css-mode-hook (lambda()
+                             (add-to-list (make-local-variable 'company-backends)
+                                          '(company-css company-files company-capf))))
+
+  (setq css-indent-offset 2)
+)
+
+(use-package emmet-mode
+  :ensure t
+  :hook (web-mode tsx-ts-mode)
+  :config
+  (add-hook 'emmet-mode-hook (lambda ()
+                               (setq emmet-indent-after-insert t)))
+)
+
 (use-package php-mode)
 
 ;; Typescript, tsx

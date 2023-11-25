@@ -12,7 +12,7 @@
         fzf/window-height 25)
 )
 
-;;(global-set-key (kbd "C-c f") 'fzf-find-file)
+(global-set-key (kbd "C-c f") 'fzf-find-file)
 ;;(global-set-key (kbd "C-c r") 'fzf-recentf)
 ;;(global-set-key (kbd "C-c p") 'fzf-projectile)
 ;;(global-set-key (kbd "C-c g") 'fzf-git-files)
