@@ -69,7 +69,7 @@
       '("" "" "   |   " " | ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]"))
 
 (ido-mode 1)
-(global-set-key (kbd "C-x C-f") 'ido-dired)
+(global-set-key (kbd "C-x C-f") 'ido-find-file)
 (global-set-key "\M-x"
                 (lambda ()
                   (interactive)
