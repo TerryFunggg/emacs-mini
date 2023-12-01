@@ -7,7 +7,7 @@
 
 
 (use-package eglot)
-(add-hook 'tsx-ts-mode-hook 'eglot-ensure)
+
 (global-set-key (kbd "C-c d") 'xref-find-definitions)
 (global-set-key (kbd "C-c h") 'eldoc)
 
