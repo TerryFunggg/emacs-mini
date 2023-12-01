@@ -1,9 +1,7 @@
 (use-package magit)
 
 (use-package docker
-  :ensure t
-  :bind ("C-c d" . docker)
-)
+  :ensure t)
 
 (use-package fzf
   :config
