@@ -7,7 +7,7 @@
                                (setq emmet-indent-after-insert t))))
 
 (use-package php-mode
-  ;;:mode "\\.php\\'"
+  :mode "\\.php\\'"
 )
 
 ;; Typescript, tsx
@@ -41,8 +41,7 @@
   :hostmode 'poly-web-hostmode
   :innermodes '(poly-web-php-innermode)
 )
-
-(add-to-list 'auto-mode-alist '("\\.php?" . poly-web-php-mode))
+;;(add-to-list 'auto-mode-alist '("\\.php?" . poly-web-php-mode))
 
 
 (provide 'my-langs)
