@@ -19,7 +19,7 @@
 
 
 ;; System init
-(set-face-attribute 'default nil :height 140) ;; 14px font size
+(set-face-attribute 'default nil :height 160) ;; 14px font size
 (set-language-environment "utf-8")
 (set-default-coding-systems 'utf-8-unix)
 (setq inhibit-startup-screen t)
@@ -30,11 +30,6 @@
 (setq global-auto-revert-non-file-buffers t) ;; auto refresh buffer
 (setq auto-revert-verbose nil)
 (setq custom-file (make-temp-file "custom"))
-
-
-(require 'recentf)
-(recentf-mode 1)
-(add-to-list 'recentf-exclude "\\private\\'" "\\opt\\'")
 
 ;; UI
 (column-number-mode 1)
@@ -49,49 +44,11 @@
 ;;(defalias 'yes-or-no-p 'y-or-n-p)
 
 
-;; Dired
-(setq dired-dwim-target t)
-(setq dired-recursive-copies 'top)
-(setq dired-recursive-deletes 'top)
-
-(require 'dired-x)
-(define-key dired-mode-map (kbd "-") #'dired-up-directory)
-
-;; ido mode
-(setq ido-everywhere t)
-(setq ido-enable-flex-matching t)
-(setq ido-use-filename-at-point 'guess)
-(setq ido-create-new-buffer nil)
-(setq ido-use-virtual-buffers t)
-(setq ido-use-face t)
-(setq ido-max-window-height 1)
-(setq ido-decorations
-      '("" "" "   |   " " | ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]"))
-
-(ido-mode 1)
-(global-set-key (kbd "C-x C-f") 'ido-find-file)
-(global-set-key "\M-x"
-                (lambda ()
-                  (interactive)
-                  (call-interactively
-                   (intern
-                    (ido-completing-read
-                     "M-x "
-                     (all-completions "" obarray 'commandp))))))
-
-;; imenu
-(global-set-key (kbd "C-c i") 'imenu)
-
-;; Tramp mode
-(setq tramp-default-method "ssh")
-
 ;; TAB config
 (electric-indent-mode 0)
-
 (set-default 'tab-always-indent 'complete)
 (setq-default indent-tabs-mode)
 (setq-default tab-width 4)
-
 (setq sentence-end-double-space nil)
 
 ;; Own
@@ -112,6 +69,7 @@
 
 
 (add-to-list 'load-path "~/.emacs.d/modules/")
+(require 'my-emacs-util)
 (require 'my-alias)
 (require 'my-better-edit)
 (require 'my-company)
