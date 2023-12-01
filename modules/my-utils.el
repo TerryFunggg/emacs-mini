@@ -5,9 +5,6 @@
   :bind ("C-c d" . docker)
 )
 
-(use-package projectile)
-(global-set-key (kbd "C-c p f") 'projectile-find-file)
-
 (use-package fzf
   :config
   (setq fzf/args "-x --color bw --print-query --margin=1,0 --no-hscroll"
@@ -22,11 +19,15 @@
         fzf/window-height 25)
 )
 
-(global-set-key (kbd "C-c f") 'fzf-find-file)
+(defun my/fzf-find-file ()
+  ""
+  (interactive)
+  (condition-case err
+      (funcall 'fzf-git)
+    (error
+     (funcall 'fzf-find-file-in-dir))))
+(global-set-key (kbd "C-c f") 'my/fzf-find-file)
 
-(use-package wgrep)
-(use-package rg)
-(global-set-key (kbd "C-c s s") 'rg)
-
+(use-package wgrep) ;; make grep buffer editable
 
 (provide 'my-utils)
