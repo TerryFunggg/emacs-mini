@@ -28,4 +28,8 @@
 
 (use-package wgrep) ;; make grep buffer editable
 
+
+(use-package yasnippet)
+(yas-global-mode 1)
+
 (provide 'my-utils)

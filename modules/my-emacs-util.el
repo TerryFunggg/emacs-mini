@@ -1,5 +1,7 @@
 ;; custom emacs build-in provided tools
 
+(electric-pair-mode)
+
 ;; recentf
 (recentf-mode 1)
 (add-to-list 'recentf-exclude "\\private\\'" "\\opt\\'")
@@ -55,6 +57,8 @@
 
 ;; grep
 (global-set-key (kbd "C-c s") 'grep-find)
+
+
 
 
 (provide 'my-emacs-util)
