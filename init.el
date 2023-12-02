@@ -56,16 +56,21 @@
     "Edit my emacs config"
     (interactive)
     (find-file "~/.emacs.d/init.el"))
+(global-set-key (kbd "C-<f12>") 'my/emacs-config)
 
 (defun my/modules-config ()
     "Edit my emacs config"
     (interactive)
     (find-file "~/.emacs.d/modules/"))
+(global-set-key (kbd "C-<f11>") 'my/modules-config)
 
 ;; theme
 ;;(use-package dracula-theme)
-(use-package leuven-theme)
-(load-theme 'leuven t)
+;;(use-package leuven-theme)
+(use-package moe-theme)
+(show-paren-mode t)
+(setq show-paren-style 'expression)
+(load-theme 'moe-light)
 
 
 (add-to-list 'load-path "~/.emacs.d/modules/")
