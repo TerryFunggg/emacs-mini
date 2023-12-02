@@ -1,7 +1,6 @@
 ;; perfer command for rectangles
-
-
-(global-unset-key (kbd "C-x r"))
+(global-unset-key (kbd "C-x n")) ;; unbind narrowing
+(global-unset-key (kbd "C-x r")) ;; unbind register & rectangle
 
 ;; remap mail
 (global-unset-key (kbd "C-x m"))
@@ -27,7 +26,7 @@
 (defalias 'mp 'mark-paragraph)
 (defalias 'mall 'mark-whole-buffer)
 (defalias 'mw 'er/mark-word)
-(defalias 'mf 'er/mark-defun)
+(defalias 'mf 'make-frame-command)
 (defalias 'murl 'er/mark-url)
 (defalias 'm@ 'er/mark-email)
 (defalias 'miq 'er/mark-inside-quotes)
@@ -36,7 +35,7 @@
 (defalias 'map 'er/mark-outside-pairs)
 
 (defalias 'ccut 'kill-region)
-(defalias 'copy 'kill-region-save)
+(defalias 'ccopy 'kill-region-save)
 (defalias 'kal 'kill-whole-line)
 
 (defalias 'lowercase 'downcase-region)
@@ -44,6 +43,12 @@
 
 (defalias 'dspc 'delete-horizontal-space)
 (defalias 'dtab 'delete-indentation)
+
+(defalias 'fff 'find-file)
+(defalias 'ffw 'find-file-other-window)
+(defalias 'fft 'find-file-other-tab)
+(defalias 'ffo 'find-file-other-frame)
+(defalias 'fff 'find-file)
 
 (defalias 'wwu 'enlarge-window)
 (defalias 'wwd 'shrink-window)
