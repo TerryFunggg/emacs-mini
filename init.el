@@ -70,7 +70,7 @@
 (use-package moe-theme)
 (show-paren-mode t)
 (setq show-paren-style 'expression)
-(load-theme 'moe-light)
+(moe-light)
 
 
 (add-to-list 'load-path "~/.emacs.d/modules/")
