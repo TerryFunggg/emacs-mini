@@ -8,8 +8,11 @@
 (use-package avy)
 (global-set-key (kbd "C-c .") 'avy-goto-char-timer)
 
+
+(winner-mode t)
 (global-hl-line-mode t)
 (setq shift-select-mode nil)
+
 
 
 (provide 'my-better-edit)
