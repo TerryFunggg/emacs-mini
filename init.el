@@ -80,3 +80,4 @@
 (require 'my-company)
 (require 'my-utils)
 (require 'my-langs)
+(require 'my-elfeed)
