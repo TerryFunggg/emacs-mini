@@ -13,9 +13,6 @@
 ;; tab bar
 (tab-bar-mode 1)
 
-;; bookmark
-(global-set-key (kbd "C-c b") 'bookmark-bmenu-list)
-
 ;; buffer
 (global-set-key (kbd "M-[") 'previous-buffer)
 (global-set-key (kbd "M-]") 'next-buffer)

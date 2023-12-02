@@ -1,21 +1,29 @@
-(global-unset-key (kbd "C-x C-n")) ;;
-(global-unset-key (kbd "M-g c")) ;; goto-char
-(global-unset-key (kbd "M-g M-g")) ;; go to line
-(global-unset-key (kbd "M-g g")) ;; go to line
-(global-unset-key (kbd "M-g TAB"))
-(global-unset-key (kbd "C-@"));; set-mark-command
-(global-unset-key (kbd "C-x C-l"));; lower case
-(global-unset-key (kbd "C-x C-u"));; upper case
-(global-unset-key (kbd "M-$"))
+;; perfer command for rectangles
+
+
+(global-unset-key (kbd "C-x r"))
+
+;; remap mail
+(global-unset-key (kbd "C-x m"))
+
+;; remap register
+(global-set-key (kbd "C-x m m") 'point-to-register)
+(global-set-key (kbd "C-x m t") 'copy-to-register)
+(global-set-key (kbd "C-x m i t") 'insert-register)
+(global-set-key (kbd "C-x m +") 'increment-register)
+(global-set-key (kbd "C-`") 'jump-to-register)
+(global-set-key (kbd "C-x m w") 'window-configuration-to-register)
+(global-set-key (kbd "C-x m f") 'frameset-to-register)
+(global-set-key (kbd "C-x m b s") 'bookmark-set)
+(global-set-key (kbd "C-x m b l") 'list-bookmarks)
+
 
 (defun my/mark-at-point()
   (interactive)
   (push-mark))
 
-
 ;; mark
 (require 'expand-region)
-(defalias 'mm 'my/mark-at-point) ;; or C-SPC C-SPC
 (defalias 'mp 'mark-paragraph)
 (defalias 'mall 'mark-whole-buffer)
 (defalias 'mw 'er/mark-word)
@@ -27,11 +35,15 @@
 (defalias 'mip 'er/mark-inside-pairs)
 (defalias 'map 'er/mark-outside-pairs)
 
-(defalias 'cut 'kill-region)
+(defalias 'ccut 'kill-region)
 (defalias 'copy 'kill-region-save)
+(defalias 'kal 'kill-whole-line)
 
 (defalias 'lowercase 'downcase-region)
 (defalias 'uppercase 'upcase-region)
+
+(defalias 'dspc 'delete-horizontal-space)
+(defalias 'dtab 'delete-indentation)
 
 (defalias 'wwu 'enlarge-window)
 (defalias 'wwd 'shrink-window)
