@@ -1,7 +1,11 @@
 (use-package magit)
 
-(use-package docker
-  :ensure t)
+;; it ok but still love using term to access
+;;(use-package docker
+;;  :ensure t)
+
+;;(use-package undo-tree)
+;;(global-undo-tree-mode)
 
 (use-package fzf
   :config

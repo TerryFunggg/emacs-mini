@@ -75,4 +75,13 @@
 ;;C-x c-e to install treesit sources
 ;;(mapc #'treesit-install-language-grammar (mapcar #'car treesit-language-source-alist))
 
+;; == Mode Remap
+(setq major-mode-remap-alist
+      '(
+        (python-mode . python-ts-mode)
+        (js-mode . js-ts-mode)
+        (ruby-mode . ruby-ts-mode)
+        ))
+
+
 (provide 'my-emacs-util)
