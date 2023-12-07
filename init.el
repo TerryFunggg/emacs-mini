@@ -45,7 +45,6 @@
 
 
 ;; TAB config
-(electric-indent-mode 0)
 (set-default 'tab-always-indent 'complete)
 (setq-default indent-tabs-mode)
 (setq-default tab-width 4)
