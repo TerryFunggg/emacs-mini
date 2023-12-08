@@ -6,6 +6,10 @@
 
 
 (global-set-key (kbd "C-c b") 'list-bookmarks)
+(global-set-key (kbd "C-c t t") 'tab-new)
+(global-set-key (kbd "C-c t q") 'tab-close)
+(global-set-key (kbd "C-c t p") 'tab-previous)
+(global-set-key (kbd "C-c t n") 'tab-next)
 
 
 (provide 'my-keys)
