@@ -18,7 +18,7 @@
   (exec-path-from-shell-initialize))
 
 
-;; System init
+;; system init
 (set-face-attribute 'default nil :height 160) ;; 14px font size
 (set-language-environment "utf-8")
 (set-default-coding-systems 'utf-8-unix)
@@ -74,9 +74,11 @@
 
 (add-to-list 'load-path "~/.emacs.d/modules/")
 (require 'my-emacs-util)
-(require 'my-alias)
 (require 'my-better-edit)
 (require 'my-company)
 (require 'my-utils)
 (require 'my-langs)
 (require 'my-elfeed)
+(require 'my-alias)
+(require 'my-keys)
+(require 'my-macros)

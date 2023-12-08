@@ -1,26 +1,3 @@
-;; perfer command for rectangles
-(global-unset-key (kbd "C-x n")) ;; unbind narrowing
-(global-unset-key (kbd "C-x r")) ;; unbind register & rectangle
-
-;; remap mail
-(global-unset-key (kbd "C-x m"))
-
-;; remap register
-(global-set-key (kbd "C-x m m") 'point-to-register)
-(global-set-key (kbd "C-x m t") 'copy-to-register)
-(global-set-key (kbd "C-x m i t") 'insert-register)
-(global-set-key (kbd "C-x m +") 'increment-register)
-(global-set-key (kbd "C-`") 'jump-to-register)
-(global-set-key (kbd "C-x m w") 'window-configuration-to-register)
-(global-set-key (kbd "C-x m f") 'frameset-to-register)
-(global-set-key (kbd "C-x m b s") 'bookmark-set)
-(global-set-key (kbd "C-x m b l") 'list-bookmarks)
-
-
-(defun my/mark-at-point()
-  (interactive)
-  (push-mark))
-
 ;; mark
 (require 'expand-region)
 (defalias 'mp 'mark-paragraph)
@@ -54,6 +31,7 @@
 (defalias 'wwd 'shrink-window)
 (defalias 'wwl 'shrink-window-horizontally)
 (defalias 'wwr 'enlarge-window-horizontally)
+(defalias 'bmset 'bookmark-set)
 
 
 (provide 'my-alias)
