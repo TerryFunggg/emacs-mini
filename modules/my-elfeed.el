@@ -7,7 +7,7 @@
         ("http://xahlee.info/kbd/keyboard_blog.xml" keyboard)
         ("http://xahlee.info/emacs/emacs/blog.xml" code emacs)
         ("http://xahlee.info/comp/blog.xml" code)
-        ("http://xahlee.info/math/blog.htmlg" math)
+        ("http://xahlee.info/math/blog.html" math)
         ("http://xahlee.info/js/blog.xml" code web)
         ;;("https://www.youtube.com/feeds/videos.xml?channel_id=UCUyeluBRhGPCW4rPe_UvBZQ" code)
         ))
