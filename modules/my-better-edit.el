@@ -6,7 +6,7 @@
   :bind ("C-=" . er/expand-region))
 
 (use-package avy)
-(global-set-key (kbd "C-c .") 'avy-goto-char-timer)
+
 
 
 (winner-mode t)

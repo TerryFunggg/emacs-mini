@@ -1,3 +1,6 @@
+(use-package helm)
+
+
 (use-package magit)
 
 ;; it ok but still love using term to access
@@ -19,7 +22,7 @@
         ;; If nil, the fzf buffer will appear at the top of the window
         ;;fzf/position-bottom t
         fzf/window-height 25)
-)
+  )
 
 (defun my/fzf-find-file ()
   ""
@@ -28,7 +31,7 @@
       (funcall 'fzf-git)
     (error
      (funcall 'fzf-find-file-in-dir))))
-(global-set-key (kbd "C-c f") 'my/fzf-find-file)
+
 
 (use-package wgrep) ;; make grep buffer editable
 

@@ -9,6 +9,7 @@
         ("http://xahlee.info/comp/blog.xml" code)
         ("http://xahlee.info/math/blog.html" math)
         ("http://xahlee.info/js/blog.xml" code web)
+        ("https://sachachua.com/blog/feed/" emacs)
         ;;("https://www.youtube.com/feeds/videos.xml?channel_id=UCUyeluBRhGPCW4rPe_UvBZQ" code)
         ))
 
