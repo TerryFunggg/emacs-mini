@@ -21,22 +21,24 @@
 (define-key dired-mode-map (kbd "-") #'dired-up-directory)
 
 ;; ido
-;; (ido-mode 1)
-;; (setq ido-everywhere t)
-;; (setq ido-enable-flex-matching t)
-;; (setq ido-use-filename-at-point 'guess)
-;; (setq ido-decorations
-;;       '("" "" "   |   " " | ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]"))
+(ido-mode 1)
+(setq ido-everywhere t)
+(setq ido-enable-flex-matching t)
+(setq ido-use-filename-at-point 'guess)
+(setq ido-decorations
+      '("" "" "   |   " " | ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]"))
 
 
-;; (global-set-key "\M-x"
-;;                 (lambda ()
-;;                   (interactive)
-;;                   (call-interactively
-;;                    (intern
-;;                     (ido-completing-read
-;;                      "M-x "
-;;                      (all-completions "" obarray 'commandp))))))
+(global-set-key "\M-x"
+                (lambda ()
+                  (interactive)
+                  (call-interactively
+                   (intern
+                    (ido-completing-read
+                     "M-x "
+                     (all-completions "" obarray 'commandp))))))
+
+;; ici
 
 
 

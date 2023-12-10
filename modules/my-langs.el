@@ -14,7 +14,17 @@
 ;; NOTE: Emacs 29 support tree-sitter, 'M-x treesit-install-language-grammer'
 (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . tsx-ts-mode))
 
+;; ruby
+(setq highlight-indent-guides-method 'column)
+(use-package ruby-mode)
+(use-package inf-ruby)
+(add-hook 'ruby-ts-mode-hook 'inf-ruby-minor-mode)
+(add-hook 'ruby-ts-mode-hook 'highlight-indent-guides-mode)
 
+;; python
+(use-package highlight-indent-guides)
+(a;;dd-hook 'python-mode-hook 'highlight-indent-guides-mode)
+(add-hook 'python-ts-mode-hook 'highlight-indent-guides-mode)
 
 ;; === Lang server config ===
 (use-package eglot)
@@ -23,11 +33,13 @@
 (add-hook 'tsx-ts-mode-hook 'eglot-ensure)
 (add-hook 'php-mode-hook 'eglot-ensure)
 (add-hook 'python-mode-hook 'eglot-ensure)
+
 (add-to-list 'eglot-server-programs '(php-mode . ("intelephense" "--stdio")))
 (add-to-list 'eglot-server-programs '(web-mode . ("vscode-html-language-server" "--stdio")))
 (add-to-list 'eglot-server-programs '(js-mode . ("typescript-language-server" "--stdio")))
 (add-to-list 'eglot-server-programs '(tsx-ts-mode . ("typescript-language-server" "--stdio")))
-(add-to-list 'eglot-server-programs '(python-mode . ("pylsp")))
+(add-to-list 'eglot-server-programs '(python-ts-mode . ("pylsp")))
+;;(add-to-list 'eglot-server-programs '(python-mode . ("pylsp")))
 
 
 (use-package polymode)

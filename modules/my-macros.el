@@ -3,5 +3,4 @@
 (defalias 'double-to-single
   (kmacro "C-M-% \" <return> \' <return>"))
 
-
 (provide 'my-macros)
