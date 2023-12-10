@@ -82,3 +82,4 @@
 (require 'my-alias)
 (require 'my-keys)
 (require 'my-macros)
+(require 'my-functions)
