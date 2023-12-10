@@ -23,7 +23,7 @@
 
 ;; python
 (use-package highlight-indent-guides)
-(a;;dd-hook 'python-mode-hook 'highlight-indent-guides-mode)
+;;dd-hook 'python-mode-hook 'highlight-indent-guides-mode)
 (add-hook 'python-ts-mode-hook 'highlight-indent-guides-mode)
 
 ;; === Lang server config ===
