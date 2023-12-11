@@ -1,13 +1,11 @@
 (use-package crux
-    :bind (("C-a" . crux-move-beginning-of-line)))
+  :bind (("C-a" . crux-move-beginning-of-line)))
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (use-package expand-region
   :bind ("C-=" . er/expand-region))
 
 (use-package avy)
-
-
 
 (winner-mode t)
 (global-hl-line-mode t)
@@ -20,10 +18,10 @@
 (setq electric-pair-pairs
       '(
         (?\" . ?\")
+        (?\' . ?\')
         (?\/ . ?\/)
         (?\{ . ?\})))
 
-
-
+(use-package change-inner)
 
 (provide 'my-better-edit)

@@ -11,10 +11,6 @@
 (global-unset-key (kbd "C-x C-o")) ;; is for delete-blank-line
 (global-set-key (kbd "C-x C-j") 'delete-blank-lines) ;;is good to use j - join for me remember the key
 
-;; buffer
-(global-set-key (kbd "M-[") 'previous-buffer)
-(global-set-key (kbd "M-]") 'next-buffer)
-
 ;;ido
 ;;(global-set-key (kbd "C-x C-f") 'ido-find-file)
 
@@ -25,8 +21,13 @@
 (global-set-key (kbd "C-c s") 'grep-find)
 (global-set-key (kbd "C-c f") 'my/fzf-find-file)
 (global-set-key (kbd "C-c d") 'xref-find-definitions)
-(global-set-key (kbd "C-c .") 'avy-goto-char-timer)
 (global-set-key (kbd "C-c b") 'helm-bookmarks)
 (global-set-key (kbd "C-c i") 'imenu)
+(global-set-key (kbd "C-c o") 'occur)
+
+;; Meta
+(global-set-key (kbd "M-.") 'avy-goto-char-timer)
+(global-set-key (kbd "M-[") 'previous-buffer)
+(global-set-key (kbd "M-]") 'next-buffer)
 
 (provide 'my-keys)
