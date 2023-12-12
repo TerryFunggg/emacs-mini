@@ -1,4 +1,4 @@
-
+(global-set-key (kbd "M-x") 'counsel-M-x)
 ;; perfer command for rectangles
 (global-unset-key (kbd "C-x n")) ;; unbind narrowing
 ;; remap mail
@@ -15,6 +15,7 @@
 ;;(global-set-key (kbd "C-x C-f") 'ido-find-file)
 
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "C-x b") 'counsel-ibuffer)
 
 ;; C-c
 (global-set-key (kbd "C-c r") 'recentf-open-files)
@@ -22,8 +23,7 @@
 (global-set-key (kbd "C-c f") 'my/fzf-find-file)
 (global-set-key (kbd "C-c d") 'xref-find-definitions)
 (global-set-key (kbd "C-c b") 'helm-bookmarks)
-(global-set-key (kbd "C-c i") 'imenu)
-(global-set-key (kbd "C-c o") 'occur)
+(global-set-key (kbd "C-c i") 'counsel-imenu)
 
 ;; Meta
 (global-set-key (kbd "M-.") 'avy-goto-char-timer)
