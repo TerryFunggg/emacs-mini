@@ -40,7 +40,7 @@
 (yas-global-mode 1)
 
 (use-package aggressive-indent)
-(add-hook 'prog-mode-hook 'aggressive-indent-mode)
+;;(add-hook 'prog-mode-hook 'aggressive-indent-mode)
 ;;(global-aggressive-indent-mode 1)
 ;;(add-to-list 'aggressive-indent-excluded-modes 'html-mode)
 
