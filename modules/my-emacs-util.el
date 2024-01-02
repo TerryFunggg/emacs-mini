@@ -45,6 +45,12 @@
 ;; Tramp mode
 (setq tramp-default-method "ssh")
 
+;; hi look
+(global-hi-lock-mode 1)
+(add-hook 'prog-mode-hook
+          (lambda ()
+            (hi-lock-face-phrase-buffer "todo")))
+
 ;;treesit
 (setq treesit-language-source-alist
       '(
