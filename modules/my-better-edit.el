@@ -7,7 +7,6 @@
 
 (use-package avy)
 
-(winner-mode t)
 (global-hl-line-mode t)
 (delete-selection-mode t)
 (setq shift-select-mode nil)
@@ -21,7 +20,5 @@
         (?\' . ?\')
         (?\/ . ?\/)
         (?\{ . ?\})))
-
-(use-package change-inner)
 
 (provide 'my-better-edit)

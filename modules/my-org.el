@@ -85,18 +85,18 @@
 ;;(define-key org-agenda-mode-map "r" 'my/org-agenda-process-inbox-item)
 
 
-(defun my/agenda-deploy ()
-  (when (s-prefix? (expand-file-name "~/org/gtd/") (buffer-file-name (current-buffer)))
-    (let ((default-directory "~/org/"))
-      (shell-command "rm index.html")
-      (org-store-agenda-views)
-      (start-process "" nil "sh" "deploy.sh"))
-    )
-  )
+;; (defun my/agenda-deploy ()
+;;   (when (s-prefix? (expand-file-name "~/org/gtd/") (buffer-file-name (current-buffer)))
+;;     (let ((default-directory "~/org/"))
+;;       (shell-command "rm index.html")
+;;       (org-store-agenda-views)
+;;       (start-process "" nil "sh" "deploy.sh"))
+;;     )
+;;   )
 
-(add-hook 'org-mode-hook
-          (lambda ()
-            (add-hook 'after-save-hook 'my/agenda-deploy)))
+;; (add-hook 'org-mode-hook
+;;           (lambda ()
+;;             (add-hook 'after-save-hook 'my/agenda-deploy)))
 
 
 

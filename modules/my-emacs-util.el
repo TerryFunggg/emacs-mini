@@ -47,7 +47,9 @@
 
 ;;treesit
 (setq treesit-language-source-alist
-      '((bash "https://github.com/tree-sitter/tree-sitter-bash")
+      '(
+        (c "https://github.com/tree-sitter/tree-sitter-c")
+        (bash "https://github.com/tree-sitter/tree-sitter-bash")
         (css "https://github.com/tree-sitter/tree-sitter-css")
         (elisp "https://github.com/Wilfred/tree-sitter-elisp")
         (html "https://github.com/tree-sitter/tree-sitter-html")
