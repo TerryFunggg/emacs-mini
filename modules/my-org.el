@@ -15,7 +15,7 @@
         ("@video" . ?v)))
 
 (setq org-todo-keywords
-      '((sequence "TODO(t)""HOLD(h)" "|" "DONE(d)")))
+      '((sequence "TODO(t)""|" "DONE(d)")))
 
 (setq org-capture-templates
       '("t" "Todo" entry
@@ -42,28 +42,37 @@
 (add-to-list 'org-agenda-custom-commands
              '("g" "Get Things Done (GTD)"
                (
-                (tags "inbox+TODO=\"TODO\"+PRIORITY=\"A\"|project+TODO=\"TODO\"+PRIORITY=\"A\"|read+TODO=\"TODO\"+PRIORITY=\"A\""
+                (tags "inbox+TODO=\"TODO\"+PRIORITY=\"A\""
                       (
                        (org-agenda-prefix-format "  %?-12t% s [%e] ")
                        (org-agenda-overriding-header "\nGet thing Done\n")))
-                (tags "inbox+TODO=\"TODO\"-PRIORITY=\"A\""
+                (tags "inbox+TODO=\"TODO\"+PRIORITY=\"B\""
                       (
-                       (org-agenda-prefix-format "  %?-12t% s ")
-                       (org-agenda-overriding-header "\nInbox\n")))
-                (tags "project+TODO=\"TODO\"-PRIORITY=\"A\""
-                      ((org-agenda-prefix-format "  %?-12t% s [%e] ")
-                       (org-agenda-overriding-header "\nProjects\n")))
-                (tags "read+TODO=\"TODO\"-PRIORITY=\"A\""
-                      ((org-agenda-prefix-format "  %?-12t% s")
-                       (org-agenda-overriding-header "\nTo Read\n")))
+                       (org-agenda-prefix-format "  %?-12t% s [%e] ")
+                       (org-agenda-overriding-header "\nNext\n")))
+                (tags "inbox+TODO=\"TODO\"+PRIORITY=\"C\""
+                      (
+                       (org-agenda-prefix-format "  %?-12t% s [%e] ")
+                       (org-agenda-overriding-header "\nHold\n")))
+                ;; (tags "inbox+TODO=\"TODO\"-PRIORITY=\"A\""
+                ;;       (
+                ;;        (org-agenda-prefix-format "  %?-12t% s ")
+                ;;        (org-agenda-overriding-header "\nInbox\n")))
+                ;; (tags "project+TODO=\"TODO\"-PRIORITY=\"A\""
+                ;;       ((org-agenda-prefix-format "  %?-12t% s [%e] ")
+                ;;        (org-agenda-overriding-header "\nProjects\n")))
+                ;; (tags "read+TODO=\"TODO\"-PRIORITY=\"A\""
+                ;;       ((org-agenda-prefix-format "  %?-12t% s")
+                ;;        (org-agenda-overriding-header "\nTo Read\n")))
                 ;; (tags "+DEADLINE>=\"<today>\""
                 ;; (tags "CLOSED>=\"<today>\""
                 ;;       ((org-agenda-overriding-header "\nCompleted today\n")))
-                (todo "HOLD"
-                      ((org-agenda-skip-function
-                        '(org-agenda-skip-entry-if 'deadline))
-                       (org-agenda-prefix-format "  %?-12t% s ")
-                       (org-agenda-overriding-header "\nHold\n"))))
+                ;; (todo "HOLD"
+                ;;       ((org-agenda-skip-function
+                ;;         '(org-agenda-skip-entry-if 'deadline))
+                ;;        (org-agenda-prefix-format "  %?-12t% s ")
+                ;;        (org-agenda-overriding-header "\nHold\n")))
+                )
                nil
                ("~/org/index.html")))
 
