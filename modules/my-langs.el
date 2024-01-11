@@ -56,6 +56,9 @@
 (add-to-list 'eglot-server-programs '(js-mode . ("typescript-language-server" "--stdio")))
 (add-to-list 'eglot-server-programs '(tsx-ts-mode . ("typescript-language-server" "--stdio")))
 (add-to-list 'eglot-server-programs '(python-ts-mode . ("pylsp")))
+(add-to-list 'eglot-server-programs '(c-mode . ("clangd")))
+(add-to-list 'eglot-server-programs '(c++-mode . ("clangd")))
+(add-to-list 'eglot-server-programs '(java-mode . ("jdtls")))
 ;;(add-to-list 'eglot-server-programs '(python-mode . ("pylsp")))
 
 

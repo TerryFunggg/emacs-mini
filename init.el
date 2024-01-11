@@ -69,7 +69,8 @@
 (use-package moe-theme)
 (show-paren-mode t)
 (setq show-paren-style 'expression)
-(moe-light)
+;;(moe-light)
+(load-theme 'modus-vivendi)
 
 
 (add-to-list 'load-path "~/.emacs.d/modules/")

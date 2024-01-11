@@ -55,6 +55,7 @@
 (setq treesit-language-source-alist
       '(
         (c "https://github.com/tree-sitter/tree-sitter-c")
+        (java "https://github.com/tree-sitter/tree-sitter-java")
         (bash "https://github.com/tree-sitter/tree-sitter-bash")
         (css "https://github.com/tree-sitter/tree-sitter-css")
         (elisp "https://github.com/Wilfred/tree-sitter-elisp")
@@ -79,6 +80,7 @@
         (python-mode . python-ts-mode)
         (js-mode . js-ts-mode)
         (ruby-mode . ruby-ts-mode)
+        (java-mode . java-ts-mode)
         ))
 
 
