@@ -15,6 +15,7 @@
 
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-x b") 'counsel-ibuffer)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; C-c
 (global-set-key (kbd "C-c r") 'recentf-open-files)
