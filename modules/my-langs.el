@@ -43,6 +43,10 @@
 (add-hook 'c-mode-hook 'my-c-mode-hook)
 (add-hook 'c++-mode-hook 'my-c-mode-hook)
 
+;; golang
+(use-package go-mode)
+(add-hook 'before-save-hook 'gofmt-before-save)
+
 ;; === Lang server config ===
 (use-package eglot)
 (add-hook 'web-mode-hook 'eglot-ensure)
@@ -50,6 +54,8 @@
 (add-hook 'tsx-ts-mode-hook 'eglot-ensure)
 (add-hook 'php-mode-hook 'eglot-ensure)
 (add-hook 'python-mode-hook 'eglot-ensure)
+(add-hook 'go-mode-hook 'eglot-ensure)
+
 
 (add-to-list 'eglot-server-programs '(php-mode . ("intelephense" "--stdio")))
 (add-to-list 'eglot-server-programs '(web-mode . ("vscode-html-language-server" "--stdio")))
