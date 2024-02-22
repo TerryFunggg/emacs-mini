@@ -83,5 +83,14 @@
         (java-mode . java-ts-mode)
         ))
 
+;; ctags config
+(setq path-to-ctags "/opt/homebrew/bin/ctags") ;; MacOS
+
+(defun create-tags (dir-name)
+  "Create tags file"
+  (interactive "Directory:")
+  (shell-command
+   (format "%s -f TAGS -e -R %s" path-to-ctags (directory-file-name dir-name)))
+)
 
 (provide 'my-emacs-util)

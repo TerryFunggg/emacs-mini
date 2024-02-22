@@ -72,6 +72,8 @@
 ;;(moe-light)
 (load-theme 'modus-vivendi)
 
+;;(add-to-list 'load-path "~/.emacs.d/lib/") ;; packages from online
+
 
 (add-to-list 'load-path "~/.emacs.d/modules/")
 (require 'my-emacs-util)

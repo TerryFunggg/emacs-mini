@@ -91,6 +91,8 @@
    (org-agenda-set-tags)
    (org-agenda-priority)
    (org-agenda-refile nil nil t)))
+
+(use-package htmlize)
 ;;(define-key org-agenda-mode-map "r" 'my/org-agenda-process-inbox-item)
 
 
@@ -107,6 +109,13 @@
 ;;           (lambda ()
 ;;             (add-hook 'after-save-hook 'my/agenda-deploy)))
 
+(org-babel-do-load-languages
+ 'org-babel-load-languages '(
+                             (shell . t)
+                             (js .t)
+                             (ruby . t)
+
+))
 
 
 

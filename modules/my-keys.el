@@ -23,7 +23,8 @@
 (global-set-key (kbd "C-c f") 'my/fzf-find-file)
 (global-set-key (kbd "C-c d") 'xref-find-definitions)
 (global-set-key (kbd "C-c b") 'list-bookmarks)
-(global-set-key (kbd "C-c i") 'counsel-imenu)
+(global-set-key (kbd "C-c t t") 'counsel-etags-find-tag-at-point)
+(global-set-key (kbd "C-c t l") 'counsel-etags-list-tag)
 
 ;; Meta
 (global-set-key (kbd "M-.") 'avy-goto-char-timer)

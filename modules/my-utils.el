@@ -1,5 +1,6 @@
 (use-package ivy)
 (use-package counsel)
+(use-package counsel-etags)
 
 (use-package magit)
 
