@@ -75,13 +75,21 @@
 ;;(mapc #'treesit-install-language-grammar (mapcar #'car treesit-language-source-alist))
 
 ;; == Mode Remap
-(setq major-mode-remap-alist
-      '(
-        (python-mode . python-ts-mode)
-        (js-mode . js-ts-mode)
-        (ruby-mode . ruby-ts-mode)
-        (java-mode . java-ts-mode)
-        ))
+;; (setq major-mode-remap-alist
+;;       '(
+;;         (python-mode . python-ts-mode)
+;;         (js-mode . js-ts-mode)
+;;         (ruby-mode . ruby-ts-mode)
+;;         (java-mode . java-ts-mode)
+;;         (c-mode . c-ts-mode)
+;;         ))
+
+(require 'tree-sitter)
+(require 'tree-sitter-langs)
+(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+
+(add-hook 'c-mode-hook #'tree-sitter-mode)
+
 
 ;; ctags config
 (setq path-to-ctags "/opt/homebrew/bin/ctags") ;; MacOS

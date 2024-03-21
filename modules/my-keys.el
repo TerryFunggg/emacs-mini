@@ -18,6 +18,7 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; C-c
+(global-set-key (kbd "C-c i") 'counsel-imenu)
 (global-set-key (kbd "C-c r") 'recentf-open-files)
 (global-set-key (kbd "C-c s") 'grep-find)
 (global-set-key (kbd "C-c f") 'my/fzf-find-file)
