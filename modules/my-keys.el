@@ -27,6 +27,11 @@
 (global-set-key (kbd "C-c y") 'yas-insert-snippet)
 (global-set-key (kbd "C-c t t") 'counsel-etags-find-tag-at-point)
 (global-set-key (kbd "C-c t l") 'counsel-etags-list-tag)
+(global-set-key (kbd "C-c w h") 'windmove-swap-states-left)
+(global-set-key (kbd "C-c w k") 'windmove-swap-states-up)
+(global-set-key (kbd "C-c w j") 'windmove-swap-states-down)
+(global-set-key (kbd "C-c w l") 'windmove-swap-states-right)
+
 
 ;; Meta
 (global-set-key (kbd "M-.") 'avy-goto-char-timer)

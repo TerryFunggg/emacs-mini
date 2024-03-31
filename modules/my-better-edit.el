@@ -13,12 +13,12 @@
 
 
 ;; cust electric mode
-(electric-indent-mode 0)
+(electric-indent-mode t)
 (setq electric-pair-pairs
       '(
         (?\" . ?\")
         (?\' . ?\')
-        (?\/ . ?\/)
+        ;;(?\/ . ?\/)
         (?\{ . ?\})))
 
 (provide 'my-better-edit)

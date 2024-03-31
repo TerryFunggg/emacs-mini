@@ -101,4 +101,6 @@
    (format "%s -f TAGS -e -R %s" path-to-ctags (directory-file-name dir-name)))
 )
 
+(winner-mode 1)
+
 (provide 'my-emacs-util)
