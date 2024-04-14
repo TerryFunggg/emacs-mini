@@ -3,6 +3,8 @@
 (setq org-agenda-files '("~/org/gtd/"))
 (setq org-agenda-diary-file "~/org/diary")
 (setq diary-file "~/org/diary")
+(setq calendar-set-date-style 'iso)
+(setq view-diary-entries-initially t)
 (setq org-agenda-custom-commands nil)
 (setq org-tag-alist
       '(("@work" . ?w)
@@ -45,22 +47,29 @@
                 (tags "inbox+TODO=\"TODO\"+PRIORITY=\"A\""
                       (
                        (org-agenda-prefix-format "  %?-12t% s [%e] ")
-                       (org-agenda-overriding-header "\nGet thing Done\n")))
-                (tags "inbox+TODO=\"TODO\"+PRIORITY=\"B\""
-                      (
-                       (org-agenda-prefix-format "  %?-12t% s [%e] ")
-                       (org-agenda-overriding-header "\nNext\n")))
-                (tags "inbox+TODO=\"TODO\"+PRIORITY=\"C\""
-                      (
-                       (org-agenda-prefix-format "  %?-12t% s [%e] ")
-                       (org-agenda-overriding-header "\nHold\n")))
+                       (org-agenda-overriding-header "\nUrgent \n")))
+                ;; (tags "inbox+TODO=\"TODO\"+PRIORITY=\"B\""
+                ;;       (
+                ;;        (org-agenda-prefix-format "  %?-12t% s [%e] ")
+                ;;        (org-agenda-overriding-header "\nNext\n")))
+                ;; (tags "inbox+TODO=\"TODO\"+PRIORITY=\"C\""
+                ;;       (
+                ;;        (org-agenda-prefix-format "  %?-12t% s [%e] ")
+                ;;        (org-agenda-overriding-header "\nHold\n")))
                 ;; (tags "inbox+TODO=\"TODO\"-PRIORITY=\"A\""
                 ;;       (
                 ;;        (org-agenda-prefix-format "  %?-12t% s ")
                 ;;        (org-agenda-overriding-header "\nInbox\n")))
-                ;; (tags "project+TODO=\"TODO\"-PRIORITY=\"A\""
-                ;;       ((org-agenda-prefix-format "  %?-12t% s [%e] ")
-                ;;        (org-agenda-overriding-header "\nProjects\n")))
+                (tags "project+TODO=\"TODO\""
+                      ((org-agenda-prefix-format "  %?-12t% s [%e] ")
+                       (org-agenda-overriding-header "\nProjects\n")))
+                (tags "bookmark+TODO=\"TODO\""
+                      ((org-agenda-prefix-format "  %?-12t% s [%e] ")
+                       (org-agenda-overriding-header "\nBookmark\n")))
+                (tags "inbox+TODO=\"TODO\"-PRIORITY=\"A\""
+                      (
+                       (org-agenda-prefix-format "  %?-12t% s [%e] ")
+                       (org-agenda-overriding-header "\nInbox \n")))
                 ;; (tags "read+TODO=\"TODO\"-PRIORITY=\"A\""
                 ;;       ((org-agenda-prefix-format "  %?-12t% s")
                 ;;        (org-agenda-overriding-header "\nTo Read\n")))
