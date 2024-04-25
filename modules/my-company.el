@@ -6,11 +6,12 @@
         (:map lsp-mode-map
          ("<tab>" . company-indent-or-complete-common))
   :config
-  (global-company-mode)
+
   (setq company-dabbrev-downcase nil)
   (setq company-minimum-prefix-length 1
         company-idle-delay 0.1))
 
+(global-company-mode)
 
 ;;(global-set-key (kbd "C-c h") 'eldoc)
 

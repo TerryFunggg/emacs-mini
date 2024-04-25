@@ -32,4 +32,16 @@
     (error
      (funcall 'fzf-find-file-in-dir))))
 
+
+(defun my/display-current-buffer-other-frame-close-window ()
+  (interactive)
+  "Display current buffer to other frame and close the origin window"
+  (let ((tempbuf (current-buffer)))
+    (delete-window)
+    (display-buffer-other-frame tempbuf)))
+
+
+(current-buffer)
+(display-buffer-other-frame)
+
 (provide 'my-functions)

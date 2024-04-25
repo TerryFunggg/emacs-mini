@@ -11,8 +11,8 @@
 (global-set-key (kbd "C-x C-j") 'delete-blank-lines) ;;is good to use j - join for me remember the key
 
 ;;ido
-(global-unset-key (kbd "C-c C-f"))
-(global-set-key (kbd "C-c C-f") 'ido-find-file)
+(global-unset-key (kbd "C-x f"))
+(global-set-key (kbd "C-x f") 'ido-find-file)
 
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-x b") 'counsel-ibuffer)
@@ -35,6 +35,7 @@
 
 (global-set-key (kbd "C-<f12>") 'my-func/emacs-config)
 (global-set-key (kbd "C-<f11>") 'my-func/modules-config)
+(global-set-key (kbd "C-x 5 M-o") 'my/display-current-buffer-other-frame-close-window)
 
 
 ;; Meta

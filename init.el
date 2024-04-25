@@ -54,6 +54,9 @@
 (show-paren-mode t)
 (setq show-paren-style 'expression)
 
+;;other
+(setq my-temp-dir "~/.emacs.d/templates/")
+
 (add-to-list 'load-path "~/.emacs.d/modules/")
 (require 'my-emacs-util)
 (require 'my-better-edit)
@@ -63,6 +66,7 @@
 (require 'my-elfeed)
 (require 'my-alias)
 (require 'my-functions)
+(require 'my-template)
 (require 'my-keys)
 (require 'my-macros)
 
