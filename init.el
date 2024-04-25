@@ -66,11 +66,11 @@
 ;; theme
 ;;(use-package dracula-theme)
 ;;(use-package leuven-theme)
-(use-package moe-theme)
+;;(use-package moe-theme)
 (show-paren-mode t)
 (setq show-paren-style 'expression)
 ;;(moe-light)
-(load-theme 'modus-vivendi)
+;;(load-theme 'modus-vivendi)
 
 ;;(add-to-list 'load-path "~/.emacs.d/lib/") ;; packages from online
 
