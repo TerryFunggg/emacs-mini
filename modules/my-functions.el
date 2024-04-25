@@ -35,7 +35,7 @@
 
 (defun my/display-current-buffer-other-frame-close-window ()
   (interactive)
-  "Display current buffer to other frame and close the origin window"
+  "Move current window to other frame and close the source window"
   (let ((tempbuf (current-buffer)))
     (delete-window)
     (display-buffer-other-frame tempbuf)))

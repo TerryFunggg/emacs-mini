@@ -1,0 +1,38 @@
+<form action="/submit-form" method="POST">
+    <label for="text-input">Text Input:</label>
+    <input type="text" id="text-input" name="text_input">
+
+    <label for="password-input">Password Input:</label>
+    <input type="password" id="password-input" name="password_input">
+
+    <label for="email-input">Email Input:</label>
+    <input type="email" id="email-input" name="email_input">
+
+    <label for="number-input">Number Input:</label>
+    <input type="number" id="number-input" name="number_input">
+
+    <label for="date-input">Date Input:</label>
+    <input type="date" id="date-input" name="date_input">
+
+    <label for="checkbox-input">Checkbox Input:</label>
+    <input type="checkbox" id="checkbox-input" name="checkbox_input">
+
+    <label for="radio-input-1">Radio Input 1:</label>
+    <input type="radio" id="radio-input-1" name="radio_input" value="option1">
+
+    <label for="radio-input-2">Radio Input 2:</label>
+    <input type="radio" id="radio-input-2" name="radio_input" value="option2">
+
+    <label for="select-input">Select Input:</label>
+    <select id="select-input" name="select_input">
+        <option value="">-- Select --</option>
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+    </select>
+
+    <label for="textarea-input">Textarea Input:</label>
+    <textarea id="textarea-input" name="textarea_input" rows="4" cols="30"></textarea>
+
+    <input type="submit" value="Submit">
+</form>
