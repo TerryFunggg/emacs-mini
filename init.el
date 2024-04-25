@@ -50,30 +50,9 @@
 (setq-default tab-width 4)
 (setq sentence-end-double-space nil)
 
-;; Own
-(defun my/emacs-config ()
-    "Edit my emacs config"
-    (interactive)
-    (find-file "~/.emacs.d/init.el"))
-(global-set-key (kbd "C-<f12>") 'my/emacs-config)
-
-(defun my/modules-config ()
-    "Edit my emacs config"
-    (interactive)
-    (find-file "~/.emacs.d/modules/"))
-(global-set-key (kbd "C-<f11>") 'my/modules-config)
-
-;; theme
-;;(use-package dracula-theme)
-;;(use-package leuven-theme)
-;;(use-package moe-theme)
+;; paren
 (show-paren-mode t)
 (setq show-paren-style 'expression)
-;;(moe-light)
-;;(load-theme 'modus-vivendi)
-
-;;(add-to-list 'load-path "~/.emacs.d/lib/") ;; packages from online
-
 
 (add-to-list 'load-path "~/.emacs.d/modules/")
 (require 'my-emacs-util)
@@ -83,8 +62,8 @@
 (require 'my-langs)
 (require 'my-elfeed)
 (require 'my-alias)
+(require 'my-functions)
 (require 'my-keys)
 (require 'my-macros)
-(require 'my-functions)
 
 (require 'my-org)

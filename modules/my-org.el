@@ -123,7 +123,7 @@
                              (shell . t)
                              (js .t)
                              (ruby . t)
-
+                             (python . t)
 ))
 
 

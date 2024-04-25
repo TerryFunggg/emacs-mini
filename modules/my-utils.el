@@ -25,14 +25,6 @@
         fzf/window-height 25)
   )
 
-(defun my/fzf-find-file ()
-  ""
-  (interactive)
-  (condition-case err
-      (funcall 'fzf-git)
-    (error
-     (funcall 'fzf-find-file-in-dir))))
-
 
 (use-package wgrep) ;; make grep buffer editable
 

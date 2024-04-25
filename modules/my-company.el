@@ -1,4 +1,10 @@
 (use-package company
+  :after lsp-mode
+  :init (setq lsp-keymap-prefix "C-c l")
+  :bind (:map company-active-map
+         ("<tab>" . company-complete-selection))
+        (:map lsp-mode-map
+         ("<tab>" . company-indent-or-complete-common))
   :config
   (global-company-mode)
   (setq company-dabbrev-downcase nil)
