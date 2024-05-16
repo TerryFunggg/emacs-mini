@@ -11,6 +11,8 @@
         ("http://xahlee.info/js/blog.xml" code web)
         ("https://sachachua.com/blog/feed/" emacs)
         ("https://karthinks.com/index.xml" emacs)
+        ("https://cestlaz.github.io/rss.xml" emacs)
+        ("https://lukesmith.xyz/index.xml" linux)
         ;;("https://www.youtube.com/feeds/videos.xml?channel_id=UCUyeluBRhGPCW4rPe_UvBZQ" code)
         ))
 
