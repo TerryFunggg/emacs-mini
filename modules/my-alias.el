@@ -33,5 +33,7 @@
 (defalias 'wwr 'enlarge-window-horizontally)
 (defalias 'bmset 'bookmark-set)
 
+(defalias 'new-buffer 'scratch-buffer)
+
 
 (provide 'my-alias)
