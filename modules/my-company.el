@@ -11,6 +11,11 @@
   (setq company-minimum-prefix-length 1
         company-idle-delay 0.1))
 
+(add-hook 'company-mode-hook '(lambda ()
+                                (setq company-backends
+                                      (delete 'company-bbdb
+                                              (delete 'company-oddmuse company-backends)))))
+
 (global-company-mode)
 
 ;;(global-set-key (kbd "C-c h") 'eldoc)
