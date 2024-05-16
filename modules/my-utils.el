@@ -1,3 +1,6 @@
+(use-package vertico
+  :init (vertico-mode))
+
 (use-package ivy)
 (use-package counsel)
 (use-package counsel-etags)
@@ -30,14 +33,16 @@
 
 
 (use-package yasnippet)
+;;(push 'company-yasnippet company-backends)
 (yas-global-mode 1)
 
-(use-package aggressive-indent)
+
+;;(use-package aggressive-indent)
 ;;(add-hook 'prog-mode-hook 'aggressive-indent-mode)
 ;;(global-aggressive-indent-mode 1)
 ;;(add-to-list 'aggressive-indent-excluded-modes 'html-mode)
 
-
 (use-package restclient)
+(use-package lorem-ipsum)
 
 (provide 'my-utils)
