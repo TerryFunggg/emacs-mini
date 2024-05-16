@@ -38,7 +38,7 @@
 
 (add-to-list 'org-agenda-custom-commands
              '("Qb" "Search Bookmarks" tags ""
-               ((org-agenda-files (file-expand-wildcards "~/org/gtd/read.org"))
+               ((org-agenda-files (file-expand-wildcards "~/org/gtd/bookmark.org"))
                 (org-agenda-prefix-format " "))))
 
 (add-to-list 'org-agenda-custom-commands
