@@ -20,12 +20,12 @@
 (define-key dired-mode-map (kbd "-") #'dired-up-directory)
 
 ;; ido
-(ido-mode 1)
-(setq ido-everywhere t)
-(setq ido-enable-flex-matching t)
-(setq ido-use-filename-at-point 'guess)
-(setq ido-decorations
-      '("" "" "   |   " " | ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]"))
+;; (ido-mode 1)
+;; (setq ido-everywhere t)
+;; (setq ido-enable-flex-matching t)
+;; (setq ido-use-filename-at-point 'guess)
+;; (setq ido-decorations
+;;       '("" "" "   |   " " | ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]"))
 
 ;; Tramp mode
 (setq tramp-default-method "ssh")
@@ -89,5 +89,9 @@
 ;; )
 
 (winner-mode 1)
+
+(require 'project)
+(mapcar (lambda (item) (push item vc-directory-exclusion-list)) '(".cache" "__pycache__" "node_modules"))
+
 
 (provide 'my-emacs-util)

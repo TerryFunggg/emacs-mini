@@ -13,7 +13,6 @@
     (delete-region beg end)
     (insert (string-join (reverse (split-string region "[[:space:]]")) " "))))
 
-
 (defun my-func/emacs-config ()
     "Edit my emacs config"
     (interactive)
@@ -39,9 +38,5 @@
   (let ((tempbuf (current-buffer)))
     (delete-window)
     (display-buffer-other-frame tempbuf)))
-
-
-(current-buffer)
-(display-buffer-other-frame)
 
 (provide 'my-functions)
