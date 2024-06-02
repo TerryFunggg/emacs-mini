@@ -5,6 +5,8 @@
 (use-package counsel)
 (use-package counsel-etags)
 
+(use-package git-gutter)
+(global-git-gutter-mode +1)
 (use-package magit)
 
 ;; it ok but still love using term to access
