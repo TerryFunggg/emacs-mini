@@ -35,7 +35,7 @@
 
 (global-set-key (kbd "C-<f12>") 'my-func/emacs-config)
 (global-set-key (kbd "C-<f11>") 'my-func/modules-config)
-(global-set-key (kbd "C-x 5 M-o") 'my/display-current-buffer-other-frame-close-window)
+(global-set-key (kbd "C-x 5 M-o") 'my/move-current-buffer-to-other-frame)
 
 
 ;; Meta

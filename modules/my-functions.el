@@ -5,7 +5,6 @@
     (delete-region beg end)
     (insert (nreverse region))))
 
-
 (defun my-func/reverse-region-words (beg end)
   "Reverse words on the region"
   (interactive "r")
@@ -32,7 +31,7 @@
      (funcall 'fzf-find-file-in-dir))))
 
 
-(defun my/display-current-buffer-other-frame-close-window ()
+(defun my/move-current-buffer-to-other-frame ()
   (interactive)
   "Move current window to other frame and close the source window"
   (let ((tempbuf (current-buffer)))
