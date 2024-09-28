@@ -10,9 +10,6 @@
 (global-unset-key (kbd "C-x C-o")) ;; is for delete-blank-line
 (global-set-key (kbd "C-x C-j") 'delete-blank-lines) ;;is good to use j - join for me remember the key
 
-(global-unset-key (kbd "C-SPC"))
-(global-set-key (kbd "C-SPC") 'forward-word)
-
 ;;ido
 (global-unset-key (kbd "C-x f"))
 (global-set-key (kbd "C-x f") 'ido-find-file)
