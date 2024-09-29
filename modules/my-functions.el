@@ -38,4 +38,20 @@
     (delete-window)
     (display-buffer-other-frame tempbuf)))
 
+;; thx Xah provide the regx
+;;http://xahlee.info/emacs/emacs/elisp_extract_url_command.html
+(defun my-html/copy-url-from-line ()
+  "Copy the url link (only first url) from current line"
+  (interactive)
+  (let ((line (string-trim-right (thing-at-point 'line t)))
+        (result ""))
+    (with-temp-buffer
+      (insert line)
+      (goto-char (point-min))
+      (re-search-forward
+       "<[A-Za-z]+.+?\\(href\\|src\\)[[:blank:]]*?=[[:blank:]]*?\\([\"']\\)\\([^\"']+?\\)\\2" nil t)
+      (setq result (match-string-no-properties 3))
+      (print (concat "Copied: " result))
+      (kill-new result))))
+
 (provide 'my-functions)
