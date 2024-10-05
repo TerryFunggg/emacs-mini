@@ -5,27 +5,13 @@
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
 
-;; use-package
-(unless (package-installed-p 'use-package)
-    (package-refresh-contents)
-    (package-install 'use-package)
-    (eval-when-compile (require 'use-package)))
-(package-initialize)
-
-(setq use-package-always-ensure t)
-(use-package exec-path-from-shell)
-(when (memq window-system '(mac ns x))
-  (exec-path-from-shell-initialize))
-
-
 ;; system init
 (set-face-attribute 'default nil :height 160) ;; 14px font size
 (set-language-environment "utf-8")
 (set-default-coding-systems 'utf-8-unix)
 (setq inhibit-startup-screen t)
-(setq make-backup-files t)
-(setq backup-by-copying t)
-(setq backup-directory-alist '(("." . "~/backup")))
+(setq make-backup-files nil)
+(setq backup-by-copying nil)
 (setq auto-save-default nil)
 (setq create-lockfiles nil)
 (global-auto-revert-mode 1)
@@ -62,10 +48,10 @@
 (add-to-list 'load-path "~/.emacs.d/modules/")
 (require 'my-emacs-util)
 (require 'my-better-edit)
-(require 'my-company)
-(require 'my-utils)
+;;(require 'my-company)
+;;(require 'my-utils)
 (require 'my-langs)
-(require 'my-elfeed)
+;;(require 'my-elfeed)
 (require 'my-alias)
 (require 'my-functions)
 (require 'my-template)

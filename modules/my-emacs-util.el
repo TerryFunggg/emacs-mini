@@ -20,12 +20,12 @@
 (define-key dired-mode-map (kbd "-") #'dired-up-directory)
 
 ;; ido
-;; (ido-mode 1)
-;; (setq ido-everywhere t)
-;; (setq ido-enable-flex-matching t)
-;; (setq ido-use-filename-at-point 'guess)
-;; (setq ido-decorations
-;;       '("" "" "   |   " " | ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]"))
+(ido-mode 1)
+(setq ido-everywhere t)
+(setq ido-enable-flex-matching t)
+(setq ido-use-filename-at-point 'guess)
+(setq ido-decorations
+       '("" "" "   |   " " | ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]"))
 
 ;; Tramp mode
 (setq tramp-default-method "ssh")

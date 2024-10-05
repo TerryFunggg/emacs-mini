@@ -101,7 +101,7 @@
    (org-agenda-priority)
    (org-agenda-refile nil nil t)))
 
-(use-package htmlize)
+;;(use-package htmlize)
 ;;(define-key org-agenda-mode-map "r" 'my/org-agenda-process-inbox-item)
 
 
