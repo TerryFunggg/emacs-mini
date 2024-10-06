@@ -35,5 +35,6 @@
 
 (defalias 'new-buffer 'scratch-buffer)
 
+(defalias 'gtl 'goto-line)
 
 (provide 'my-alias)
