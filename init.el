@@ -6,7 +6,7 @@
              '("melpa" . "http://melpa.org/packages/") t)
 
 ;; system init
-(set-face-attribute 'default nil :height 160) ;; 14px font size
+(set-face-attribute 'default nil :height 140) ;; 14px font size
 (set-language-environment "utf-8")
 (set-default-coding-systems 'utf-8-unix)
 (setq inhibit-startup-screen t)

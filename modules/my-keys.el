@@ -1,4 +1,4 @@
-(global-set-key (kbd "M-x") 'counsel-M-x)
+;;(global-set-key (kbd "M-x") 'counsel-M-x)
 (global-unset-key (kbd "C-x n")) ;; unbind narrowing
 ;; remap mail
 (global-unset-key (kbd "C-x m"))
