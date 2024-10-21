@@ -34,7 +34,8 @@
 (defalias 'bmset 'bookmark-set)
 
 (defalias 'new-buffer 'scratch-buffer)
-
 (defalias 'gtl 'goto-line)
+
+(defalias 'cc 'compile)
 
 (provide 'my-alias)
