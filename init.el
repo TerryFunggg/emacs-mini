@@ -44,6 +44,8 @@
 (setq show-paren-style 'parenthesis)
 (setq ring-bell-function 'ignore)
 ;;(defalias 'yes-or-no-p 'y-or-n-p)
+(setq-default dired-listing-switches "-alh")
+(load-theme 'manoj-dark)
 
 
 ;; TAB config

@@ -46,6 +46,11 @@
 (setq c-default-style "linux"
       c-basic-offset 4)
 
+;; js mode
+(setq js-indent-level 2)
+(add-hook 'js-mode-hook 'lsp)
+
+
 
 ;; === Lang server config ===
 (use-package lsp-mode
