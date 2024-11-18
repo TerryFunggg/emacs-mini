@@ -1,7 +1,8 @@
-(defalias 'my-macros/single-to-double
-  (kmacro "C-M-% ' <return> \" <return>"))
-(defalias 'my-macro/double-to-single
-  (kmacro "C-M-% \" <return> \' <return>"))
+(defalias 'my-macro/double-to-single-quote
+  (kmacro "C-M-% \" <return> ' C-e <backspace> <return> !"))
+
+(defalias 'my-macro/single-to-double-quote
+   (kmacro "C-M-% ' C-e <backspace> <return> \" C-e <backspace> <return> !"))
 
 (defalias 'my-macro/insert-comma-at-the-end
   (kmacro "C-M-% $ <return> , <return> !"))
