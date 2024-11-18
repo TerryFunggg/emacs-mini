@@ -54,4 +54,17 @@
       (print (concat "Copied: " result))
       (kill-new result))))
 
+(defun my/create-today-log ()
+  (interactive)
+  (let (log-file)
+    (setq log-file
+          (concat "~/notes/"
+                  (format-time-string "%Y-%m-%d")
+                  ".org"))
+    (when (not (file-exists-p log-file))
+      (progn
+        (write-region "* Notes" nil log-file)))
+
+    (find-file log-file)))
+
 (provide 'my-functions)
