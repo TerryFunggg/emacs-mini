@@ -22,15 +22,6 @@
     (interactive)
     (find-file "~/.emacs.d/modules/"))
 
-(defun my-func/fzf-find-file ()
-  "Sources from git repo, else find from current directory "
-  (interactive)
-  (condition-case err
-      (funcall 'fzf-git)
-    (error
-     (funcall 'fzf-find-file-in-dir))))
-
-
 (defun my/move-current-buffer-to-other-frame ()
   (interactive)
   "Move current window to other frame and close the source window"
