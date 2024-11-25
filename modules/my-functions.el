@@ -54,7 +54,7 @@
                   ".org"))
     (when (not (file-exists-p log-file))
       (progn
-        (write-region "* Notes" nil log-file)))
+        (write-region "" nil log-file)))
 
     (find-file log-file)))
 

@@ -32,8 +32,8 @@
 
 (add-to-list 'org-agenda-custom-commands '("Q"."Custom Queries"))
 (add-to-list 'org-agenda-custom-commands
-             '("Qn" "Search Quick Notes" search "* "
-               ((org-agenda-files (file-expand-wildcards "~/org/notes/quick_notes.org"))
+             '("Qn" "Search Notes" search "* "
+               ((org-agenda-files '( "~/notes/"))
                 (org-agenda-prefix-format " "))))
 
 (add-to-list 'org-agenda-custom-commands
