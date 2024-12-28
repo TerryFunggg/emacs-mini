@@ -60,13 +60,16 @@
                 ;;       (
                 ;;        (org-agenda-prefix-format "  %?-12t% s ")
                 ;;        (org-agenda-overriding-header "\nInbox\n")))
+                (tags "goal+TODO=\"TODO\""
+                      ((org-agenda-prefix-format "  %?-12t% s %e ")
+                       (org-agenda-overriding-header "\nGoals\n")))
                 (tags "project+TODO=\"TODO\""
                       ((org-agenda-prefix-format "  %?-12t% s [%e] ")
                        (org-agenda-overriding-header "\nProjects\n")))
                 (tags "bookmark+TODO=\"TODO\""
                       ((org-agenda-prefix-format "  %?-12t% s [%e] ")
                        (org-agenda-overriding-header "\nBookmark\n")))
-                (tags "inbox+TODO=\"TODO\"-PRIORITY=\"A\""
+                (tags "inbox+TODO=\"TODO\"-PRIORITY=\"A\"-goal"
                       (
                        (org-agenda-prefix-format "  %?-12t% s [%e] ")
                        (org-agenda-overriding-header "\nInbox \n")))
