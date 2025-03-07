@@ -32,6 +32,7 @@
 (blink-cursor-mode 0)
 (global-display-line-numbers-mode 1)
 (column-number-mode 1)
+(setq ring-bell-function 'ignore)
 ;; ======== UI END ========
 
 
@@ -115,6 +116,7 @@
 
 ;; ======== Module Import START ========
 (add-to-list 'load-path "~/.emacs.d/modules/")
+(require 'my-plugs)
 (require 'my-alias)
 (require 'my-functions)
 (require 'my-keys)
