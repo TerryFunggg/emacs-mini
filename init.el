@@ -121,6 +121,11 @@
 (require 'my-functions)
 (require 'my-keys)
 (require 'my-org)
+
+;; other plugs
+(require 'flycheck-pos-tip)
+(with-eval-after-load 'flycheck
+  (flycheck-pos-tip-mode))
 ;; ======== Module Import END ========
 
 ;; THEME
