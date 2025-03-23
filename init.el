@@ -17,11 +17,23 @@
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
-
-;; system init
-(set-face-attribute 'default nil :height 160) ;; 14px font size
+;; utf8
 (set-language-environment "utf-8")
 (set-default-coding-systems 'utf-8-unix)
+;; (prefer-coding-system 'utf-8)
+;; (set-terminal-coding-system 'utf-8)
+;; (set-keyboard-coding-system 'utf-8)
+(set-charset-priority 'unicode)
+(setq locale-coding-system 'utf-8
+      coding-system-for-read 'utf-8
+      coding-system-for-write 'utf-8)
+(set-selection-coding-system 'utf-8)
+(setq default-process-coding-system '(utf-8-unix . utf-8-unix))
+
+;; font size
+(set-face-attribute 'default nil :height 160) ;; 14px font size
+
+;; system init
 (setq inhibit-startup-screen t)
 (setq make-backup-files t)
 (setq backup-by-copying t)
@@ -39,13 +51,17 @@
 (global-visual-line-mode 1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
-(show-paren-mode 1)
 (global-display-line-numbers-mode t)
-(setq show-paren-style 'parenthesis)
 (setq ring-bell-function 'ignore)
 ;;(defalias 'yes-or-no-p 'y-or-n-p)
 (setq-default dired-listing-switches "-alh")
-(load-theme 'manoj-dark)
+
+;; theme
+(use-package doom-themes
+  :demand
+  :config
+  (load-theme 'doom-challenger-deep t))
+;; (load-theme 'manoj-dark)
 
 
 ;; TAB config
@@ -57,6 +73,12 @@
 ;; paren
 (show-paren-mode t)
 (setq show-paren-style 'expression)
+
+;; fix correct keybindings
+(when (eq system-type 'darwin)
+		(setq mac-command-modifier 'super)
+		(setq mac-option-modifier 'meta)
+		(setq mac-control-modifier 'control))
 
 ;;other
 (setq my-temp-dir "~/.emacs.d/templates/")
