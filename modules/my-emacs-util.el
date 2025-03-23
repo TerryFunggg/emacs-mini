@@ -31,10 +31,10 @@
 (setq tramp-default-method "ssh")
 
 ;; hi look
-(global-hi-lock-mode 1)
-(add-hook 'prog-mode-hook
-          (lambda ()
-            (hi-lock-face-phrase-buffer "todo")))
+;;(global-hi-lock-mode 1)
+;;(add-hook 'prog-mode-hook
+          ;;(lambda ()
+          ;;  (hi-lock-face-phrase-buffer "todo")))
 
 ;;treesit
 ;; dun wanna config anymore :(
@@ -88,10 +88,10 @@
 ;;    (format "%s -f TAGS -e -R %s" path-to-ctags (directory-file-name dir-name)))
 ;; )
 
-(winner-mode 1)
+;; (winner-mode 1)
 
 (require 'project)
-(mapcar (lambda (item) (push item vc-directory-exclusion-list)) '(".cache" "__pycache__" "node_modules"))
+(mapcar (lambda (item) (push item vc-directory-exclusion-list)) '(".cache" "__pycache__" "node_modules" ".git"))
 
 
 (provide 'my-emacs-util)
