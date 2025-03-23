@@ -31,7 +31,11 @@
 (setq default-process-coding-system '(utf-8-unix . utf-8-unix))
 
 ;; font size
-(set-face-attribute 'default nil :height 160) ;; 14px font size
+;; (set-face-attribute 'default nil
+;;                     :height 160
+;;                     :font "Source Code Pro"
+
+;; ) ;; 14px font size
 
 ;; system init
 (setq inhibit-startup-screen t)
@@ -43,7 +47,10 @@
 (global-auto-revert-mode 1)
 (setq global-auto-revert-non-file-buffers t) ;; auto refresh buffer
 (setq auto-revert-verbose nil)
-(setq custom-file (make-temp-file "custom"))
+(setq custom-file "~/.config/emacs-custom.el")
+(when (file-exists-p custom-file)
+  (progn
+    (load custom-file)))
 
 ;; UI
 (column-number-mode 1)
