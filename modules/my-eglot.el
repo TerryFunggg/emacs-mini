@@ -1,4 +1,7 @@
-(use-package eglot)
+(use-package eglot
+  :init
+  (setq eldoc-echo-area-prefer-doc-buffer t
+      eldoc-echo-area-use-multiline-p nil))
 
 
 (add-to-list 'eglot-server-programs '(php-mode . ("intelephense" "--stdio")))
