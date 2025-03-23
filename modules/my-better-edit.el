@@ -16,6 +16,8 @@
 (electric-indent-mode t)
 (setq electric-pair-pairs
       '(
+        (?\~ . ?\~)
+        (?\` . ?\`)
         (?\" . ?\")
         (?\' . ?\')
         (?\{ . ?\})))

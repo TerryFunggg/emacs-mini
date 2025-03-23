@@ -80,15 +80,18 @@
 		(setq mac-option-modifier 'meta)
 		(setq mac-control-modifier 'control))
 
-;;other
+;; other files
 (setq my-temp-dir "~/.emacs.d/templates/")
 
 (add-to-list 'load-path "~/.emacs.d/modules/")
 (require 'my-emacs-util)
 (require 'my-better-edit)
-(require 'my-company)
 (require 'my-utils)
 (require 'my-langs)
+;; language server, pick one only (lsp or eglot)
+;;(require 'my-lsp)
+(require 'my-eglot)
+
 (require 'my-elfeed)
 (require 'my-alias)
 (require 'my-functions)
