@@ -14,12 +14,14 @@
 (add-to-list 'eglot-server-programs '(java-mode . ("jdtls")))
 (add-to-list 'eglot-server-programs '(python-mode . ("pylsp")))
 (add-to-list 'eglot-server-programs '(go-mode . ("gopls")))
+(add-to-list 'eglot-server-programs '(lua-mode . ("lua-language-server")))
 
 (add-hook 'web-mode-hook 'eglot-ensure)
 (add-hook 'js-mode-hook 'eglot-ensure)
 (add-hook 'php-mode-hook 'eglot-ensure)
 (add-hook 'python-mode-hook 'eglot-ensure)
 (add-hook 'go-mode-hook 'eglot-ensure)
+(add-hook 'lua-mode-hook 'eglot-ensure)
 
 
 (use-package company

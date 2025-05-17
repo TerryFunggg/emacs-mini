@@ -46,6 +46,8 @@
 ;; js mode
 (setq js-indent-level 2)
 
+;; lua mode
+(use-package lua-mode)
 
 ;; (use-package polymode)
 
