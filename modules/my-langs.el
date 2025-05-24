@@ -43,6 +43,22 @@
 (setq c-default-style "linux"
       c-basic-offset 4)
 
+;; C lang hook
+(defun my/compile-c-project()
+  "Call emacs build-in compile command"
+  (interactive)
+  (save-buffer)
+  (let* ((project-dir (locate-dominating-file default-directory "Makefile"))
+         (makefile-exists (and project-dir (file-exists-p (concat project-dir "Makefile")))))
+    (if makefile-exists
+        ;; if Emacs find Makefile under projects:
+        (progn
+          (compile (format "cd %s && make" project-dir))
+          (message (format "Compiled %s" (concat project-dir "Makefile"))))
+      ;; Else, no any Makefile found, let user type command
+      (compile (read-string "Compile command: " "")))))
+(define-key c-mode-map (kbd "C-c x") 'my/compile-c-project)
+
 ;; js mode
 (setq js-indent-level 2)
 
