@@ -1,7 +1,13 @@
 (use-package eglot
   :init
   (setq eldoc-echo-area-prefer-doc-buffer t
-      eldoc-echo-area-use-multiline-p nil))
+        eldoc-echo-area-use-multiline-p nil
+        eglot-autoshutdown t))
+
+(add-hook 'eglot-managed-mode-hook
+          (lambda ()
+            (setq-local eglot-ignored-server-capabilities '(:documentFormatting :documentRangeFormatting))))
+
 
 
 (add-to-list 'eglot-server-programs '(php-mode . ("intelephense" "--stdio")))
