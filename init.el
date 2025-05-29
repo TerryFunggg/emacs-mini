@@ -1,12 +1,6 @@
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(add-to-list 'package-archives
-             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
 
 (package-initialize)
-
 (unless package-archive-contents
   (package-refresh-contents))
 
@@ -61,7 +55,6 @@
       completions-max-height 10)
 ;; ======== Convenience END  ========
 
-
 ;; ======== Dired START ========
 (setq dired-dwim-target t
       dired-recursive-copies 'top
@@ -94,7 +87,6 @@
 (setq max-mini-window-height 0.2)
 ;; ======== Minibuffer END ========
 
-
 ;; ======== Tools START ========
 
 ;; Recentf
@@ -116,16 +108,10 @@
 
 ;; ======== Module Import START ========
 (add-to-list 'load-path "~/.emacs.d/modules/")
-(require 'my-plugs)
 (require 'my-alias)
 (require 'my-functions)
 (require 'my-keys)
 (require 'my-org)
-
-;; other plugs
-(require 'flycheck-pos-tip)
-(with-eval-after-load 'flycheck
-  (flycheck-pos-tip-mode))
 ;; ======== Module Import END ========
 
 ;; THEME
