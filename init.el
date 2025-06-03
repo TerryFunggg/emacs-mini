@@ -53,9 +53,17 @@
       completion-auto-help 'visible
       completion-auto-select 'second-tab
       completions-max-height 10)
+
+;; IDO mode
+(ido-mode 1)
+(setq ido-everywhere t
+      ido-enable-flex-matching t
+      ido-use-filename-at-point 'guess)
+
 ;; ======== Convenience END  ========
 
 ;; ======== Dired START ========
+(require 'dired-x)
 (setq dired-dwim-target t
       dired-recursive-copies 'top
       dired-recursive-deletes 'top
@@ -63,7 +71,7 @@
       dired-kill-when-opening-new-dired-buffer t)
 
 (put 'dired-find-alternate-file 'disabled nil)
-(require 'dired-x)
+(define-key dired-mode-map (kbd "-") #'dired-up-directory)
 ;; ======== Dired END ========
 
 ;; ======== Tab Config START ========
@@ -110,6 +118,7 @@
 (add-to-list 'load-path "~/.emacs.d/modules/")
 (require 'my-alias)
 (require 'my-functions)
+(require 'my-plugs)
 (require 'my-keys)
 (require 'my-org)
 ;; ======== Module Import END ========

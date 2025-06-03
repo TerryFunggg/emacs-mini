@@ -8,9 +8,12 @@
 (global-unset-key (kbd "C-x C-o")) ;; is for delete-blank-line
 (global-unset-key (kbd "C-x C-d")) ;; disable List directory
 (global-unset-key (kbd "C-x d")) ;; disable Dired key, duplicate with C-x C-f
+(global-unset-key (kbd "C-x f")) ;; remove fill-column 
 
 (global-set-key (kbd "C-x C-j") 'delete-blank-lines) ;;is good to use j - join for me remember the key
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+
+(global-set-key (kbd "C-x C-d") 'dired-jump)
 
 ;; C-c
 (global-set-key (kbd "C-c r") 'recentf-open-files)
