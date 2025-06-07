@@ -9,7 +9,7 @@
 (icomplete-mode 1)
 
 ;; tab bar
-(tab-bar-mode 1)
+
 
 
 ;; dired
@@ -20,10 +20,10 @@
 (define-key dired-mode-map (kbd "-") #'dired-up-directory)
 
 ;; ido
-;; (ido-mode 1)
-;; (setq ido-everywhere t)
-;; (setq ido-enable-flex-matching t)
-;; (setq ido-use-filename-at-point 'guess)
+(ido-mode 1)
+(setq ido-everywhere t)
+(setq ido-enable-flex-matching t)
+(setq ido-use-filename-at-point 'guess)
 ;; (setq ido-decorations
 ;;       '("" "" "   |   " " | ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]"))
 

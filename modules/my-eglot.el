@@ -28,6 +28,7 @@
 (add-hook 'python-mode-hook 'eglot-ensure)
 (add-hook 'go-mode-hook 'eglot-ensure)
 (add-hook 'lua-mode-hook 'eglot-ensure)
+(add-hook 'occur-mode-hook 'eglot-ensure)
 
 
 (use-package company

@@ -1,17 +1,12 @@
-(use-package vertico
-  :init (vertico-mode))
-
-(use-package ivy)
-(use-package counsel)
-(use-package counsel-etags)
+;;(use-package vertico
+;;  :init (vertico-mode))
+;;(use-package ivy)
+;;(use-package counsel)
 
 (use-package git-gutter)
 (global-git-gutter-mode +1)
-(use-package magit)
 
-;; it ok but still love using term to access
-;;(use-package docker
-;;  :ensure t)
+(use-package magit)
 
 ;;(use-package undo-tree)
 ;;(global-undo-tree-mode)
@@ -44,33 +39,17 @@
 ;;(global-aggressive-indent-mode 1)
 ;;(add-to-list 'aggressive-indent-excluded-modes 'html-mode)
 
-(use-package restclient)
-(use-package lorem-ipsum)
-
-(use-package pos-tip)
- (defun my-describe-function (function)
-   "Display the full documentation of FUNCTION (a symbol) in tooltip."
-   (interactive (list (function-called-at-point)))
-   (if (null function)
-       (pos-tip-show
-        "** You didn't specify a function! **" '("red"))
-     (pos-tip-show
-      (with-temp-buffer
-        (let ((standard-output (current-buffer))
-              (help-xref-following t))
-          (prin1 function)
-          (princ " is ")
-          (describe-function-1 function)
-          (buffer-string)))
-      nil nil nil 0)))
-(define-key emacs-lisp-mode-map (kbd "C-;") 'my-describe-function)
+(use-package restclient :defer t)
+(use-package lorem-ipsum :defer t)
 
 (use-package project-tab-groups
   :ensure
+  :bind (("C-<next>" . tab-next)
+         ("C-<prior>" . tab-previous))
   :config
   (project-tab-groups-mode 1))
 
-(global-set-key (kbd "C-<next>") 'tab-next)
-(global-set-key (kbd "C-<prior>") 'tab-previous)
+;;(global-set-key (kbd "C-<next>") 'tab-next)
+;; (global-set-key (kbd "C-<prior>") 'tab-previous)
 
 (provide 'my-utils)
