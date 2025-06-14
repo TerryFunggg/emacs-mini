@@ -1,16 +1,4 @@
 ;; mark
-(require 'expand-region)
-(defalias 'mp 'mark-paragraph)
-(defalias 'mall 'mark-whole-buffer)
-(defalias 'mw 'er/mark-word)
-(defalias 'mf 'make-frame-command)
-(defalias 'murl 'er/mark-url)
-(defalias 'm@ 'er/mark-email)
-(defalias 'miq 'er/mark-inside-quotes)
-(defalias 'maq 'er/mark-outside-quotes)
-(defalias 'mip 'er/mark-inside-pairs)
-(defalias 'map 'er/mark-outside-pairs)
-
 (defalias 'ccut 'kill-region)
 (defalias 'ccopy 'kill-region-save)
 (defalias 'kal 'kill-whole-line)
