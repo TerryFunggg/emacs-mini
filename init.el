@@ -156,7 +156,8 @@
 ;; ======== Modules END ========
 
 ;; theme
-(load-theme 'manoj-dark)
+;;(load-theme 'manoj-dark)
+(load-theme 'leuven-dark)
 ;; Load custom file
 (when (file-exists-p custom-file)
   (progn
