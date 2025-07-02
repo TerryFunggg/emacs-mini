@@ -128,6 +128,11 @@
    (push item vc-directory-exclusion-list))
  '(".cache" "__pycache__" "node_modules")) ;; ignore folder
 
+
+;; Remember mode
+(require 'remember)
+(setq remember-data-file "~/notes/remember.org")
+
 ;; Tramp
 (setq tramp-default-method "ssh")
 
