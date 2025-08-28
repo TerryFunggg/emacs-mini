@@ -41,6 +41,8 @@
 
 (global-set-key (kbd "C-c C-r") 'remember)
 
+(global-set-key (kbd "C-c C-d") 'my/toggle-window-dedicated)
+
 (global-set-key (kbd "C-<f12>") 'my-func/emacs-config)
 (global-set-key (kbd "C-<f11>") 'my-func/modules-config)
 (global-set-key (kbd "C-x 5 M-o") 'my/move-current-buffer-to-other-frame)

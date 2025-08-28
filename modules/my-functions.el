@@ -67,4 +67,12 @@
 
     (find-file log-file)))
 
+(defun my/toggle-window-dedicated ()
+  "Toggle the current window as dedicated to its buffer."
+  (interactive)
+  (let ((win (selected-window)))
+    (set-window-dedicated-p win (not (window-dedicated-p win)))
+    (message "Window %s" (if (window-dedicated-p win) "dedicated" "normal"))))
+
+
 (provide 'my-functions)
