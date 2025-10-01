@@ -71,13 +71,15 @@
 
 ;; IDO mode
 
-(use-package ido
-  :config
-  (setq ido-everywhere t
-        ido-enable-flex-matching t
-        ido-use-filename-at-point 'guess)
-  (ido-mode 1)
-)
+;; (use-package ido
+;;   :config
+;;   (setq ido-everywhere t
+;;         ido-enable-flex-matching t
+;;         ido-use-filename-at-point 'guess)
+;;   (ido-mode 1)
+;; )
+(fido-mode 1)
+(fido-vertical-mode 1)
 
 ;; active tab bar mode
 (tab-bar-mode 1)
@@ -162,3 +164,6 @@
 (when (file-exists-p custom-file)
   (progn
     (load custom-file)))
+
+;; startup
+(my/org-inbox)
