@@ -30,6 +30,11 @@
 ;; Tramp mode
 (setq tramp-default-method "ssh")
 
+(defun my/disable-company-in-shell ()
+  (company-mode -1))
+(add-hook 'shell-mode-hook #'my/disable-company-in-shell)
+(add-hook 'eshell-mode-hook #'my/disable-company-in-shell)
+
 ;; hi look
 ;;(global-hi-lock-mode 1)
 ;;(add-hook 'prog-mode-hook
