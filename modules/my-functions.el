@@ -75,4 +75,12 @@
     (message "Window %s" (if (window-dedicated-p win) "dedicated" "normal"))))
 
 
+(defun my/notes-grep ()
+  "Run grep-find on my notes directory (case-insensitive)."
+  (interactive)
+  (let* ((keyword (read-string "Enter search keyword: "))
+         (grep-find-command
+          (format "find ~/notes/*.org -type f -exec grep -i -nH -e %s {} +" (shell-quote-argument keyword))))
+    (grep-find grep-find-command)))
+
 (provide 'my-functions)
