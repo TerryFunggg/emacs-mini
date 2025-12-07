@@ -29,7 +29,7 @@
 (global-set-key (kbd "C-c r") 'recentf-open-files)
 (global-set-key (kbd "C-c s") 'grep-find)
 (global-set-key (kbd "C-c f") 'my-func/fzf-find-file)
-(global-set-key (kbd "C-c d") 'xref-find-definitions)
+(global-set-key (kbd "C-c d") 'xref-find-definitions-other-window)
 (global-set-key (kbd "C-c b") 'list-bookmarks)
 (global-set-key (kbd "C-c y") 'yas-insert-snippet)
 ;;(global-set-key (kbd "C-c t t") 'counsel-etags-find-tag-at-point)

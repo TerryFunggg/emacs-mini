@@ -99,4 +99,11 @@
 (mapcar (lambda (item) (push item vc-directory-exclusion-list)) '(".cache" "__pycache__" "node_modules" ".git"))
 
 
+(add-to-list 'display-buffer-alist
+             ;; Open compilation buffer at bottom with 15% of frame height
+             '("\\*compilation\\*"
+               (display-buffer-in-side-window)
+               (side . bottom)
+               (window-height . 0.15)))
+
 (provide 'my-emacs-util)
