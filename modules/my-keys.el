@@ -38,8 +38,9 @@
 (global-set-key (kbd "C-c w k") 'windmove-swap-states-up)
 (global-set-key (kbd "C-c w j") 'windmove-swap-states-down)
 (global-set-key (kbd "C-c w l") 'windmove-swap-states-right)
-
-(global-set-key (kbd "C-c C-r") 'remember)
+(global-set-key (kbd "C-<next>") 'tab-next)
+(global-set-key (kbd "C-<prior>") 'tab-previous)
+;; (global-set-key (kbd "C-c C-r") 'remember)
 
 (global-set-key (kbd "C-c C-d") 'my/toggle-window-dedicated)
 
