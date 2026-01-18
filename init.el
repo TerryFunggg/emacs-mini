@@ -158,8 +158,12 @@
 ;; ======== Modules END ========
 
 ;; theme
+(add-to-list 'load-path "~/.emacs.d/themes/")
+(require 'catppuccin-theme)
+
 ;;(load-theme 'manoj-dark)
-(load-theme 'leuven-dark)
+;; (load-theme 'leuven-dark)
+(load-theme 'catppuccin :no-confirm)
 ;; Load custom file
 (when (file-exists-p custom-file)
   (progn
