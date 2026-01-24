@@ -1,9 +1,11 @@
+(require 'dired-x)
 (setq dired-dwim-target t
-      dired-do-revert-buffer t
-      dired-listing-switches "-alh --group-directories-first"
-      dired-recursive-copies 'always
-      dired-recursive-deletes 'always
-      )
+      dired-recursive-copies 'top
+      dired-recursive-deletes 'top
+      dired-listing-switches "-alh"
+      dired-kill-when-opening-new-dired-buffer t)
+
+(put 'dired-find-alternate-file 'disabled nil)
 
 (with-eval-after-load 'dired
   ;; Quick toggle details / all marks

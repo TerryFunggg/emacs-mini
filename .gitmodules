@@ -1,51 +1,15 @@
-[submodule "extra/nano-emacs"]
-	path = extra/nano-emacs
-	url = https://github.com/rougier/nano-emacs.git
-[submodule "extra/swiper"]
-	path = extra/swiper
-	url = https://github.com/abo-abo/swiper.git
-[submodule "extra/smex"]
-	path = extra/smex
-	url = https://github.com/nonsequitur/smex.git
-[submodule "extra/s"]
-	path = extra/s
-	url = https://github.com/magnars/s.el.git
-[submodule "extra/ts"]
-	path = extra/ts
-	url = https://github.com/alphapapa/ts.el.git
-[submodule "extra/dash"]
-	path = extra/dash
-	url = https://github.com/magnars/dash.el.git
-[submodule "extra/vertico"]
-	path = extra/vertico
-	url = https://github.com/minad/vertico
-[submodule "extra/consult"]
-	path = extra/consult
-	url = https://github.com/minad/consult
-[submodule "extra/orderless"]
-	path = extra/orderless
-	url = https://github.com/oantolin/orderless
-[submodule "extra/marginalia"]
-	path = extra/marginalia
-	url = https://github.com/minad/marginalia
-[submodule "extra/embark"]
-	path = extra/embark
-	url = https://github.com/oantolin/embark
-[submodule "extra/corfu"]
-	path = extra/corfu
-	url = https://github.com/minad/corfu
-[submodule "extra/cape"]
-	path = extra/cape
-	url = https://github.com/minad/cape
 [submodule "extra/exec-path-from-shell"]
 	path = extra/exec-path-from-shell
 	url = https://github.com/purcell/exec-path-from-shell.git
-[submodule "extra/nerd-icons-corfu"]
-	path = extra/nerd-icons-corfu
-	url = https://github.com/LuigiPiucco/nerd-icons-corfu.git
 [submodule "extra/nerd-icons"]
 	path = extra/nerd-icons
 	url = https://github.com/rainstormstudio/nerd-icons.el.git
 [submodule "extra/nerd-icons-dired"]
 	path = extra/nerd-icons-dired
 	url = https://github.com/rainstormstudio/nerd-icons-dired.git
+[submodule "extra/company-mode"]
+	path = extra/company-mode
+	url = https://github.com/company-mode/company-mode.git
+[submodule "extra/catppuccin"]
+	path = extra/catppuccin
+	url = https://github.com/catppuccin/emacs.git
