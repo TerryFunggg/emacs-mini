@@ -22,14 +22,6 @@
     (interactive)
     (find-file "~/.emacs.d/modules/"))
 
-(defun my-func/fzf-find-file ()
-  "Sources from git repo, else find from current directory "
-  (interactive)
-  (condition-case err
-      (funcall 'fzf-git)
-    (error
-     (funcall 'fzf-find-file-in-dir))))
-
 
 (defun my/move-current-buffer-to-other-frame ()
   (interactive)
@@ -83,4 +75,39 @@
           (format "find ~/notes/*.org -type f -exec grep -i -nH -e %s {} +" (shell-quote-argument keyword))))
     (grep-find grep-find-command)))
 
-(provide 'my-functions)
+(defun my-func/list-template-dir ()
+    "List template directory"
+    (interactive)
+    (find-file my-temp-dir))
+
+(defun my-func/insert-template ()
+  ""
+  (interactive)
+  (insert-file
+   (concat
+    my-temp-dir
+    (ivy-completing-read
+     "Insert: "
+     (directory-files my-temp-dir nil directory-files-no-dot-files-regexp)))))
+
+(defun my/eshell-popup ()
+  "Open eshell in a bottom window taking 25% of frame height."
+  (interactive)
+  (let ((eshell-buffer (get-buffer-create "*eshell-popup*")))
+    ;; Switch to eshell in that buffer (creates if needed)
+    (with-current-buffer eshell-buffer
+      (unless (derived-mode-p 'eshell-mode)
+        (eshell-mode)))
+
+    ;; Display it in a bottom window
+    (display-buffer eshell-buffer
+                    `(display-buffer-in-side-window
+                      (side          . bottom)
+                      (slot          . 0)
+                      (window-height . 0.25)
+                      (window-parameters . ((mode-line-format . (" Eshell"))))))
+
+    ;; Select the new window and give focus
+    (select-window (get-buffer-window eshell-buffer))
+    (goto-char (point-max))
+    (eshell-bol)))
